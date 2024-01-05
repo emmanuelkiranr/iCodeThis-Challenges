@@ -1,0 +1,96 @@
+body {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #131840;
+  font-family: "Poppins", sans-serif;
+  color: white;
+}
+.visitors_stats {
+  text-align: center;
+  background-color: #1c225d;
+  width: 350px;
+  height: 250px;
+  position: relative;
+}
+
+.visitors_stats .header {
+  background-color: #161c4e;
+  padding: 5px;
+  font-size: 8px;
+  letter-spacing: 2px;
+}
+
+.chart_container {
+  width: 150px;
+  position: absolute;
+  top: 70%;
+  left: 20%;
+  transform: translate(-20%, -70%);
+}
+.total_visitors h1 {
+  font-size: 30px;
+  font-weight: 500;
+  margin: 0;
+}
+.total_visitors span {
+  font-size: 8px;
+  letter-spacing: 0.6px;
+}
+
+.total_visitors {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  line-height: 0.9;
+}
+
+.stats {
+  text-align: left;
+}
+
+.stats ul {
+  list-style-type: none;
+  position: absolute;
+  top: 55%;
+  left: 55%;
+  transform: translate(-10%, -50%);
+}
+
+.stats ul li {
+  font-size: 8px;
+  margin-bottom: 18px;
+}
+
+.pill {
+  display: inline-block;
+  text-align: center;
+  width: 20px;
+  color: black;
+  border-radius: 50px;
+  padding: 1.5px;
+  margin-right: 5px;
+}
+
+li:nth-child(1) .pill {
+  background-color: #ba69c8;
+}
+
+li:nth-child(2) .pill {
+  background-color: #ec407a;
+}
+
+li:nth-child(3) .pill {
+  background-color: #ef6c00;
+}
+
+li:nth-child(4) .pill {
+  background-color: #ffd741;
+}
+
+li:nth-child(5) .pill {
+  background-color: #69f0ae;
+}
