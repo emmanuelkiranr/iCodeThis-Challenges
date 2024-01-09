@@ -1,0 +1,151 @@
+/* Add CSS here */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "poppins", sans-serif;
+  background-color: #17113a;
+}
+
+li {
+  list-style-type: none;
+  font-size: 8px;
+  padding: 5px 0 5px 12px;
+}
+
+main {
+  width: 520px;
+  height: 370px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 4px;
+  background-color: #d4ebeb;
+  /* main has 3 sections inside to center */
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.left,
+.center,
+.right {
+  width: 135px;
+  align-self: flex-start;
+  margin-top: 60px;
+}
+
+h3 {
+  font-size: 9px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+h1 {
+  font-size: 25px;
+  margin-bottom: 8px;
+}
+
+p {
+  font-size: 8px;
+  line-height: 12px;
+  font-weight: 100;
+}
+
+h6 {
+  font-size: 10px;
+  margin-bottom: 10px;
+}
+
+.intro {
+  margin-bottom: 55px;
+}
+
+.left li {
+  letter-spacing: 1.3px;
+}
+
+.left li:nth-child(2) {
+  background-color: #c3e1db;
+  border-radius: 2px;
+}
+
+/* .left li:hover {
+    background-color: #c3e1db;
+    border-radius: 2px;
+    cursor: pointer;
+} */
+
+.center h6 {
+  margin-bottom: 0;
+}
+
+.center ul {
+  padding-top: 8px;
+  background-color: #c3e1db;
+  border-radius: 2px;
+}
+
+.center ul li {
+  letter-spacing: normal;
+  line-height: 5px;
+  font-weight: 100;
+}
+
+.center ul li span {
+  font-weight: 600;
+  line-height: 20px;
+}
+
+.right {
+  margin-top: 50px;
+  padding: 15px;
+  border: 1px solid white;
+  background-color: #e5efeb;
+  border-radius: 2px;
+}
+
+.right h3 {
+  font-size: 7px;
+}
+
+.right .intro {
+  margin-bottom: 70px;
+}
+
+.intro ul li {
+  font-size: 7px;
+  font-weight: 100;
+  letter-spacing: 0.1px;
+  padding-left: 0;
+}
+
+.intro ul li::before {
+  content: "\2713";
+  margin-right: 4px;
+}
+
+.right button {
+  width: 100px;
+  height: 30px;
+  border: 0px;
+  border-radius: 2px;
+  font-size: 8px;
+  font-weight: bolder;
+  background-color: #ffa492;
+  box-shadow: 0 4px 4px #ffd5cd;
+}
+
+.right button:hover {
+  cursor: pointer;
+  background-color: #fc9884;
+}
