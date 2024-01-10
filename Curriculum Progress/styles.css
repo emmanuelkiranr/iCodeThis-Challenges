@@ -1,0 +1,137 @@
+/* Add CSS here */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  background-color: #e3e0ee;
+  color: black;
+}
+
+.container {
+  /* position the container to the center of viewport */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  /* center the elements inside the container */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  gap: 10px;
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.outer-radius {
+  width: 70px;
+  height: 70px;
+  border-radius: 100px;
+  background-color: #dfdfec;
+
+  /* center the inner circle */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: -1;
+}
+
+.progress {
+  position: absolute;
+  z-index: 1;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  /* background: conic-gradient(#3498db 0% 25%,
+            #2ecc71 25% 50%,
+            #e74c3c 50% 75%,
+            #f39c12 75% 100%
+            ); */
+}
+
+.inner-radius {
+  width: 55px;
+  height: 55px;
+  border-radius: 100px;
+  background-color: white;
+  /* containing block of completion percentage */
+  position: relative;
+  z-index: 2;
+}
+
+.completeion-percentage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.percentage {
+  font-size: 1em;
+}
+
+.chart-title {
+  font-size: 5.5px;
+  font-weight: 500;
+}
+
+.radio_group {
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+li {
+  list-style: none;
+  width: 130px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #e4e4eb;
+  border-radius: 3px;
+  font-size: 10px;
+}
+
+input {
+  width: 15px;
+  height: 15px;
+  accent-color: #2c295f;
+  margin-left: 10px;
+}
+
+li:has(input:checked) {
+  border: 1px solid #2c295f;
+}
+
+label {
+  display: inline-block;
+  line-height: 12px;
+}
+
+h3 {
+  font-size: 10px;
+}
+
+h4 {
+  font-size: 8px;
+}
+
+p {
+  font-size: 7px;
+  letter-spacing: 0.5px;
+  font-weight: 300;
+}

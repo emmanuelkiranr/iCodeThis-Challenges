@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./scripts.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <section class="container">
+        <div class="progress-bar">
+          <div class="outer-radius">
+            <div class="progress"></div>
+            <div class="inner-radius">
+              <div class="completeion-percentage">
+                <h3 class="percentage"></h3>
+                <p class="chart-title">Content progress</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <ul class="radio_group">
+            <h3>Curriculum</h3>
+            <li>
+              <input type="radio" name="completion" id="chapter 1" checked />
+              <label for="chapter 1" onclick="updateProgress(25)">
+                <h4>Chapter 1</h4>
+                <p>Introduction</p>
+              </label>
+            </li>
+            <li>
+              <input type="radio" name="completion" id="chapter 2" />
+              <label for="chapter 2" onclick="updateProgress(65)">
+                <h4>Chapter 2</h4>
+                <p>Information architecture</p>
+              </label>
+            </li>
+            <li>
+              <input type="radio" name="completion" id="chapter 3" />
+              <label for="chapter 3" onclick="updateProgress(100)">
+                <h4>Chapter 3</h4>
+                <p>Data and Security</p>
+              </label>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
