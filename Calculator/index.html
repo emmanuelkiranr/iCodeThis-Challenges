@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/12.2.1/math.js"
+      integrity="sha512-ekTDuSaAE9sFxbDUSIgOT0OK+iInxoziYIA03oVHFWC7edmuSwngpR/FTu7ome+sfcZgFePphvGDkRTav62lMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="./scripts.js"></script>
+  </head>
+
+  <body>
+    <main>
+      <section class="screen">
+        <input
+          type="text"
+          id="display"
+          style="text-align: right; padding: 10px; font-size: 20px"
+          readonly
+        />
+      </section>
+      <section class="keyboard">
+        <button onclick="clearScreen()">AC</button>
+        <button class="operator" onclick="flip()">+/-</button>
+        <button class="operator" onclick="appendToScreen('%')">%</button>
+        <button class="operator" onclick="appendToScreen('/')">/</button>
+        <button class="number" onclick="appendToScreen(7)">7</button>
+        <button class="number" onclick="appendToScreen(8)">8</button>
+        <button class="number" onclick="appendToScreen(9)">9</button>
+        <button class="operator" onclick="appendToScreen('*')">x</button>
+        <button class="number" onclick="appendToScreen(4)">4</button>
+        <button class="number" onclick="appendToScreen(5)">5</button>
+        <button class="number" onclick="appendToScreen(6)">6</button>
+        <button class="operator" onclick="appendToScreen('+')">+</button>
+        <button class="number" onclick="appendToScreen(1)">1</button>
+        <button class="number" onclick="appendToScreen(2)">2</button>
+        <button class="number" onclick="appendToScreen(3)">3</button>
+        <button onclick="appendToScreen('-')">-</button>
+        <button class="number" onclick="appendToScreen(0)">0</button>
+        <button onclick="appendToScreen('.')">.</button>
+        <button class="equal" onclick="calculate()">=</button>
+      </section>
+    </main>
+  </body>
+</html>
