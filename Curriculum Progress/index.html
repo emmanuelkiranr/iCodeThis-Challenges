@@ -24,8 +24,14 @@
           <ul class="radio_group">
             <h3>Curriculum</h3>
             <li>
-              <label for="chapter-1" onclick="updateProgress(25)">
-                <input type="checkbox" name="chapter-1" id="chapter-1" />
+              <label for="chapter-1">
+                <!-- always attach eventhandlers directly to the input element -->
+                <input
+                  type="checkbox"
+                  name="chapter-1"
+                  id="chapter-1"
+                  onclick="updateProgress(25, 1)"
+                />
                 <article>
                   <h4>Chapter 1</h4>
                   <p>Introduction</p>
@@ -33,8 +39,13 @@
               </label>
             </li>
             <li>
-              <label for="chapter-2" onclick="updateProgress(65)">
-                <input type="checkbox" name="chapter-2" id="chapter-2" />
+              <label for="chapter-2">
+                <input
+                  type="checkbox"
+                  name="chapter-2"
+                  id="chapter-2"
+                  onclick="updateProgress(40, 2)"
+                />
                 <article>
                   <h4>Chapter 2</h4>
                   <p>Information architecture</p>
@@ -42,8 +53,13 @@
               </label>
             </li>
             <li>
-              <label for="chapter-3" onclick="updateProgress(100)">
-                <input type="checkbox" name="chapter-3" id="chapter-3" />
+              <label for="chapter-3">
+                <input
+                  type="checkbox"
+                  name="chapter-3"
+                  id="chapter-3"
+                  onclick="updateProgress(35, 3)"
+                />
                 <article>
                   <h4>Chapter 3</h4>
                   <p>Data and Security</p>
