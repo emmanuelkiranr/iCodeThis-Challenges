@@ -53,11 +53,6 @@ body {
   width: 70px;
   height: 70px;
   border-radius: 50%;
-  /* background: conic-gradient(#3498db 0% 25%,
-            #2ecc71 25% 50%,
-            #e74c3c 50% 75%,
-            #f39c12 75% 100%
-            ); */
 }
 
 .inner-radius {
@@ -96,17 +91,21 @@ body {
 
 li {
   list-style: none;
-  width: 130px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
   border: 1px solid #e4e4eb;
   border-radius: 3px;
-  font-size: 10px;
 }
 
-input {
+label {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  width: 130px;
+  height: 50px;
+  line-height: 12px;
+}
+
+input[type="checkbox"] {
   width: 15px;
   height: 15px;
   accent-color: #2c295f;
@@ -117,10 +116,12 @@ li:has(input:checked) {
   border: 1px solid #2c295f;
 }
 
-label {
-  display: inline-block;
-  line-height: 12px;
+label:hover,
+input[type="checkbox"] {
+  cursor: pointer;
 }
+
+/*  */
 
 h3 {
   font-size: 10px;
