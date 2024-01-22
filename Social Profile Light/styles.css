@@ -1,0 +1,84 @@
+/* Add CSS here */
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e7dcfe, #feecd8, #e7dcfe);
+  font-family: sans-serif;
+}
+
+.profile-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background-color: white;
+  padding: 30px;
+  border-radius: 20px;
+
+  text-align: center;
+}
+
+.profile-image img {
+  border: 8px solid #f7f7fe;
+  border-radius: 20px;
+}
+
+.profile-image {
+  margin-bottom: 10px;
+}
+
+.username {
+  margin-bottom: 10px;
+}
+
+p.about {
+  font-size: small;
+}
+
+.connect {
+  margin-top: 30px;
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  padding: 10px;
+  width: 120px;
+  border: 0;
+  border-radius: 20px;
+  font-size: 12px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+}
+
+button:nth-child(1) {
+  background: linear-gradient(to right, #fb4062, #fc9038);
+}
+
+button:nth-child(1):hover {
+  background: linear-gradient(to right, #fc9038, #fb4062);
+}
+
+button:nth-child(2) {
+  background-color: #feecd0;
+  transition: background-color 0.3s ease;
+}
+
+button:nth-child(2):hover {
+  background-color: #efd8af;
+}
