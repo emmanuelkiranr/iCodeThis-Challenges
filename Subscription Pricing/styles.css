@@ -1,0 +1,151 @@
+/* Add CSS here */
+*,
+*::after,
+::before {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #e9eaf9;
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(189, 193, 216);
+
+  text-align: center;
+  padding: 20px;
+}
+
+.title h3 {
+  font-family: "Times New Roman", Times, serif;
+  margin-bottom: 6px;
+}
+
+.title p {
+  font-size: 11px;
+}
+
+.subscription-options {
+  margin-block: 25px;
+}
+
+label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+
+  padding: 15px 20px;
+  border: 2px solid #e8ecf8;
+  border-radius: 5px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+label:has(input[type="radio"]:checked) {
+  border: 2px solid #3343ec;
+}
+
+label article {
+  line-height: 22px;
+}
+
+input[type="radio"] {
+  /* height: 22px;
+    width: 22px;
+    accent-color: black;*/
+  cursor: pointer;
+  /* hide the default radio icon without losing original space and input functionality */
+  appearance: none;
+
+  /* add custom radio icon */
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid black;
+
+  /* position the custom tick mark in center of custom radio icon */
+  position: relative;
+}
+
+input[type="radio"]:checked {
+  background-color: black;
+}
+
+input[type="radio"]:checked::before {
+  content: "\2714";
+  color: white;
+
+  /* centering the custom tick mark */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.option p {
+  font-size: 12px;
+}
+
+.option span {
+  font-size: 15px;
+}
+
+p.pill {
+  font-size: 10px;
+  background-color: #3343ec;
+  color: white;
+  width: 70px;
+  text-align: center;
+  border-radius: 15px;
+}
+
+.payment {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+button {
+  width: 200px;
+  margin-inline: auto;
+  border: 0;
+  border-radius: 50px;
+  padding: 17.5px;
+  cursor: pointer;
+}
+
+button:nth-child(1) {
+  background-color: black;
+  color: white;
+  border: 2px solid transparent;
+  transition: background-color 0.5s ease;
+}
+
+button:nth-child(2) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 0;
+  border: 2px solid #ececf5;
+  background-color: transparent;
+  margin-bottom: 10px;
+}
+
+.payment a {
+  font-size: small;
+}
