@@ -1,0 +1,159 @@
+/* Add CSS here */
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+body {
+  font-family: sans-serif;
+  height: 100vh;
+  background: linear-gradient(to right, #058ecf, #13b2c0);
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 0 100px rgb(19, 120, 148);
+}
+
+header {
+  background-color: #ebeff2;
+  color: #5d7179;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 20px 15px;
+  border-radius: 10px 10px 0 0;
+}
+
+header img {
+  opacity: 0.5;
+}
+
+main {
+  background-color: white;
+  padding: 5px 20px 30px 20px;
+  border-radius: 0 0 10px 10px;
+}
+
+li {
+  margin-top: 30px;
+}
+
+.status-label {
+  font-weight: bold;
+  color: #33b7f7;
+
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+article {
+  margin-left: 30px;
+}
+
+li {
+  position: relative;
+}
+
+.vertical-line {
+  position: absolute;
+  top: 22px;
+  left: 8.5px;
+  border-left: 1px solid rgb(0, 0, 0, 0.1);
+}
+
+.one {
+  height: 106px;
+}
+
+.two {
+  height: 92px;
+}
+
+.three {
+  height: 76px;
+}
+
+article p {
+  font-size: x-small;
+}
+
+.confirmation-code {
+  margin-top: 16px;
+}
+
+span.code {
+  font-weight: bold;
+  opacity: 0.5;
+}
+
+button {
+  display: block;
+  font-size: xx-small;
+  color: white;
+  cursor: pointer;
+  padding: 5px;
+  background-color: #36b6f0;
+  border: 0;
+  border-radius: 5px;
+
+  margin-top: 16px;
+}
+
+button:hover {
+  background-color: rgb(54, 182, 240, 0.9);
+}
+
+.pill {
+  opacity: 0.5;
+  background: rgb(0, 0, 0, 0.1);
+  display: inline-block;
+  padding: 5px;
+  border-radius: 8px;
+  margin-top: 5px;
+}
+
+article > p {
+  margin-block: 5px;
+}
+
+input[type="radio"] {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 100px;
+  background-color: rgb(0, 0, 0, 0.1);
+  position: relative;
+}
+
+input[type="radio"]:checked {
+  background-color: #67dc19;
+  box-shadow: 0 0 10px rgb(93, 147, 82);
+}
+
+input[type="radio"]:checked::before {
+  content: "\2713";
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

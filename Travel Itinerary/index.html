@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Travel Itinerary</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <img
+          width="15"
+          height="15"
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAfElEQVR4nO2VMQqAMAxF35XctCguXT2yk3gesReISwVxkA5NWtEHf8rwyCcQ+KmEEWg0BR5YAAGChqAH5ii4RmUDuSVoCyTOOo2KJGYFpqoFLqEiTwaCtuAke0XFRcGqOmd1DGbnXVzoEyptrYQbb3wTTxvuGDBov3K+xwGTHXaq3KoCQgAAAABJRU5ErkJggg=="
+        />
+        <h4>Bergen - Budapest</h4>
+        <img
+          width="15"
+          height="15"
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAcElEQVR4nO2RMQqAMBAE5yGm9u2KkI+pmHxAm7M5QiBw6XZgqxumORBCCDFIAg6g2jKwznYTcAGv2203Hwpzj8bx3+5ioW7tCMXFQt3aEZ6B2LCbO8LmYqHuag/3xxNYXCzcTfbwYtsaodmuEEIImny615Rj1YkBLAAAAABJRU5ErkJggg=="
+        />
+      </header>
+      <main>
+        <ul>
+          <li>
+            <div class="vertical-line one"></div>
+            <label for="booked" class="status-label">
+              <input type="radio" name="booked" id="booked" checked />
+              Flight booked
+            </label>
+            <article>
+              <div class="confirmation-code">
+                <p>Confirmation Code</p>
+                <span class="code">678900</span>
+              </div>
+              <button>SHOW BOOKING SUMMARY</button>
+            </article>
+          </li>
+          <li>
+            <div class="vertical-line two"></div>
+            <label for="preparation" class="status-label">
+              <input type="radio" name="preparation" id="preparation" checked />
+              Preparation
+            </label>
+            <article>
+              <p class="pill">Priority</p>
+              <button>ADD SERVICES</button>
+            </article>
+          </li>
+          <li>
+            <div class="vertical-line three"></div>
+            <label for="checkin" class="status-label">
+              <input type="radio" name="checkin" id="checkin" checked />
+              Check-in
+            </label>
+            <article>
+              <p>All Passengers Checked-in</p>
+              <p class="pill">AG</p>
+              <p class="pill">
+                <img
+                  width="12"
+                  height="9"
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAAsTAAALEwEAmpwYAAABP0lEQVR4nO2aPU7DMBhA31QW0pMAC5QZZgor5RZVroAqztIcCRigF4AVFiNLjlRVkSW3DI76nuQtef5UNYm/HxARERER+U9OgGvgFpge4JkmR3RNGAkz4B0IaX0Diz08T+ne3hOdV1ROA2y2gu7XD3BR4InX/g54PtMe1fIwEHS/VgWel4xnTsUsM4GvCzzrjCfuUS1tJvCuwNNlPHGPamn9AfAfEHwE8B0QfAniVyD4GcRzQPAghCfB4FEYc4FgMoTZYFeQVZoOYz0ACyJYEcKSGNYEsSiKVWEsi2NfABsj2BnC1hj2BrE5SsW0NkexORqOuTm6PPYRmftM4M8FnlXGc0fFNGmUbWhM7qzAc57u2fV8AKdUziXwthX0F/C4h2exMyj5mtyjYJImRm8OHGxskmM2plFZEREREWEE/AGp9EUsjgrsgAAAAABJRU5ErkJggg=="
+                />
+              </p>
+            </article>
+          </li>
+          <li>
+            <label for="packing" class="status-label">
+              <input type="radio" name="packing" id="packing" disabled />
+              Packing
+            </label>
+            <article>
+              <p>
+                You may upgrade your baggage up to three <br />
+                hours before departure
+              </p>
+              <button>ADD BAGGAGE</button>
+            </article>
+          </li>
+        </ul>
+      </main>
+    </div>
+  </body>
+</html>
