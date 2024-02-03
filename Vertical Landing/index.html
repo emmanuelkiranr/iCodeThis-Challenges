@@ -7,7 +7,7 @@
     <title>Vertical Landing</title>
   </head>
   <body>
-    <nav>
+    <nav class="sidebar">
       <ul>
         <li><a class="link" href="#">Home</a></li>
         <li><a class="link" href="#">About</a></li>
@@ -34,35 +34,43 @@
           <button>VIEW OUR PRICES</button>
         </section>
 
-        <section class="slides">
-          <img
-            class="img"
-            id="img1"
-            width="300"
-            src="https://icodethis.com/_next/image?url=%2Fimages%2Fprojects%2Fvertical_landing.png&w=3840&q=75"
-            alt="one"
-          />
-          <img
-            class="img"
-            id="img2"
-            width="300"
-            src="https://icodethis.com/_next/image?url=%2Fimages%2Fprojects%2Frestaurant_ui_kit.png&w=3840&q=75"
-            alt="two"
-          />
-          <img
-            class="img"
-            id="img3"
-            width="300"
-            src="https://icodethis.com/_next/image?url=%2Fimages%2Fprojects%2Faccount_ui.png&w=3840&q=75"
-            alt="three"
-          />
-          <img
-            class="img"
-            id="img4"
-            width="300"
-            src="https://icodethis.com/_next/image?url=%2Fimages%2Fprojects%2Ftravel_itinerary.png&w=3840&q=75"
-            alt="four"
-          />
+        <section class="carousel-container">
+          <div class="images">
+            <img
+              class="carousel-img"
+              id="img1"
+              height="400"
+              src="https://imgs.search.brave.com/gOYvrbvHjMFHj1gXndwV3UnYjSeAANRz7c3SGDT0aaE/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/ZnJlZS1waG90by9u/aWFnYXJhLWZhbGxz/XzY0OTQ0OC0zMzE4/LmpwZz9zaXplPTYy/NiZleHQ9anBn"
+              alt="one"
+            />
+            <img
+              class="carousel-img"
+              id="img2"
+              height="400"
+              src="https://imgs.search.brave.com/3t0-G0rO7bF5jFAyj5uOw-1xvNyA4DZeGNgilxTgoNY/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMucGV4ZWxzLmNv/bS9waG90b3MvOTk3/Nzk1OS9wZXhlbHMt/cGhvdG8tOTk3Nzk1/OS5qcGVnP2F1dG89/Y29tcHJlc3MmY3M9/dGlueXNyZ2ImZHBy/PTEmdz01MDA"
+              alt="two"
+            />
+            <img
+              class="carousel-img"
+              id="img3"
+              height="400"
+              src="https://imgs.search.brave.com/UutPkmlwIGh_maic8MzD2ldcJo9Xl6s1_pVWk1MqsZk/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMudW5zcGxhc2gu/Y29tL3Bob3RvLTE2/ODg3MTYyOTAwNTYt/YzcyN2IwOTgzNzQy/P2l4bGliPXJiLTQu/MC4zJml4aWQ9TTN3/eE1qQTNmREI4TUh4/bFpHbDBiM0pwWVd3/dFptVmxaSHd4T1h4/OGZHVnVmREI4Zkh4/OGZBPT0mdz0xMDAw/JnE9ODA"
+              alt="three"
+            />
+            <img
+              class="carousel-img"
+              id="img4"
+              height="400"
+              src="https://imgs.search.brave.com/cWYNw0GyHwdKk7LwbDCQvhlaU2w_81meITJGxw-VNYg/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9idXJz/dC5zaG9waWZ5Y2Ru/LmNvbS9waG90b3Mv/dHdvLXRvbmUtaW5r/LWNsb3VkLmpwZz93/aWR0aD0xMDAwJmZv/cm1hdD1wanBnJmV4/aWY9MCZpcHRjPTA"
+              alt="four"
+            />
+          </div>
+          <div class="img-selection">
+            <a href="#img1"></a>
+            <a href="#img2"></a>
+            <a href="#img3"></a>
+            <a href="#img4"></a>
+          </div>
         </section>
       </div>
 
@@ -88,14 +96,6 @@
             <li>
               <p>Sunday</p>
               <span>10:00&nbsp;-&nbsp;22:00</span>
-            </li>
-            <li>
-              <p>&nbsp;</p>
-              <span>&nbsp;</span>
-            </li>
-            <li>
-              <p>&nbsp;</p>
-              <span>&nbsp;</span>
             </li>
           </ul>
         </fieldset>
