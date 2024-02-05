@@ -125,6 +125,48 @@ main {
 
 .carousel-container {
   text-align: center;
+  position: relative;
+}
+
+.carousel-container::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  bottom: 0;
+  transform: translate(-50%, 20%);
+
+  /* Gradients are images, We cannot display backround image if there is no content so we manually specify height and width */
+  width: 100px;
+  height: 120px;
+  /* Default behaviour of background-image is to repeat itself to fill it's container */
+  background-image: radial-gradient(
+    circle at center,
+    rgb(206, 207, 206) 0.1rem,
+    transparent 0
+  );
+
+  /* here background-size is the size of the individual repeating background-image */
+  background-size: 1rem 1rem;
+  background-repeat: round;
+}
+
+.carousel-container::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  right: 0;
+  top: 0;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 120px;
+  background-image: radial-gradient(
+    circle at center,
+    rgb(206, 207, 206) 0.1rem,
+    transparent 0
+  );
+  background-size: 1rem 1rem;
+  background-repeat: round;
 }
 
 .images {
