@@ -55,7 +55,8 @@ ul {
   font-size: small;
 
   /* work arouond to get text-decoration: overline to work on hover */
-  text-decoration: underline #223745;
+  /* text-decoration: underline #223745; */
+  text-decoration: none;
 
   writing-mode: vertical-lr;
   transform: rotate(180deg);
@@ -63,7 +64,21 @@ ul {
 
 .sidebar a:hover {
   color: rgb(255, 255, 255);
-  text-decoration: overline;
+  /* text-decoration: overline; */
+}
+
+.nav-container {
+  position: relative;
+}
+
+li:has(a[aria-current="page"]) a::before,
+.nav-container li a:hover::before {
+  content: "";
+  position: absolute;
+  left: 45px;
+  width: 2px;
+  height: 100%;
+  background-color: white;
 }
 
 header {
