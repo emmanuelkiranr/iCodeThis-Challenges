@@ -1,3 +1,3 @@
 ## Vertical Landing
 
-![Vertical Landing](./vertical-landing.png)
+![vertical-landing.png](https://i.postimg.cc/qBtfjZc6/vertical-landing.png)
