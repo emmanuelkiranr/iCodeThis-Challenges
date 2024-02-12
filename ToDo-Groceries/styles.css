@@ -1,0 +1,103 @@
+/* Add CSS here */
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: small;
+  background-color: #eef0ff;
+
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background-color: white;
+  color: #46466f;
+  min-width: 320px;
+  padding: 20px;
+  border-radius: 15px;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 0px 10px #c1c4e4;
+}
+
+article {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+article p {
+  color: rgb(70, 70, 111, 0.7);
+}
+
+.todo-list,
+.completed-list {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+input[type="radio"] {
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  margin-right: 10px;
+
+  border: 1px solid rgb(58, 59, 114, 0.5);
+
+  position: relative;
+}
+
+input[type="radio"]:checked::before {
+  content: "\2713";
+  color: rgb(58, 59, 114, 0.8);
+
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+label {
+  padding: 6px;
+  display: flex;
+  align-items: center;
+}
+
+.add-new {
+  cursor: pointer;
+  align-self: flex-end;
+  padding: 8px 20px;
+  border-radius: 5px;
+  border: 0;
+  background-color: #3a3b72;
+  color: white;
+}
+
+.next-todo {
+  height: 440px;
+  width: 100px;
+  border-radius: 12px;
+  z-index: -1;
+  background-color: rgb(255, 255, 255, 0.7);
+
+  position: absolute;
+  top: 50%;
+  left: 73%;
+  transform: translateY(-50%);
+}
