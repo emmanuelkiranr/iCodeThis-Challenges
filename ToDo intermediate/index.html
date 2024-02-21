@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDo Advanced</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./scripts.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1 class="banner">ToDo-List</h1>
+    </header>
+    <main class="container">
+      <section aria-labelledby="all-todo-lists" class="todo-lists">
+        <header>
+          <h3 id="all-todo-lists" class="section-title">My Lists</h3>
+        </header>
+        <ul class="todo-lists-container">
+          <li>Youtube</li>
+          <li>Twitter</li>
+          <li>Reddit</li>
+        </ul>
+        <form action="">
+          <button
+            id="add-todo-btn"
+            class="btn add-todo"
+            aria-label="add-todo-list"
+          >
+            +
+          </button>
+          <input
+            type="text"
+            name="add-todo"
+            id="add-todo-inp"
+            class="inp add-todo"
+            placeholder="create new list"
+            aria-label="create new list"
+          />
+        </form>
+      </section>
+      <section aria-label="add-clear-todo-tasks">
+        <section aria-labelledby="all-todos-task" class="todo-tasks">
+          <header class="tasks-header">
+            <h3 id="all-todos-task" class="section-title">Youtube</h3>
+            <p class="task-count">3 tasks remaining</p>
+          </header>
+          <ul class="todo-tasks-container">
+            <li>
+              <input type="checkbox" name="task-list" id="task-1" />
+              <label for="task-1">This is the first task</label>
+            </li>
+            <li>
+              <input type="checkbox" name="task-list" id="task-2" />
+              <label for="task-2">This is the second task</label>
+            </li>
+            <li>
+              <input type="checkbox" name="task-list" id="task-3" />
+              <label for="task-3">This is the third task</label>
+            </li>
+          </ul>
+          <form action="">
+            <button id="add-task-btn" class="btn" aria-label="add-new-task">
+              +
+            </button>
+            <input
+              type="text"
+              name="add-task"
+              id="add-task-inp"
+              class="inp add-task"
+              placeholder="create new task"
+              aria-label="create new task"
+            />
+          </form>
+        </section>
+        <section aria-label="clear-delete-btns" class="clear-delete">
+          <button class="btn delete">Clear completed tasks</button>
+          <button class="btn delete">Delete list</button>
+        </section>
+      </section>
+    </main>
+  </body>
+</html>
