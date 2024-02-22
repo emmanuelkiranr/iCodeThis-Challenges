@@ -52,6 +52,7 @@ added under each todo */
   font-size: 20px;
   font-weight: 400;
   padding-block: 10px;
+  margin-right: 1em;
 }
 
 .todo-lists-container {
@@ -59,10 +60,20 @@ added under each todo */
   padding-bottom: 10px;
 }
 
-.todo-lists-container li {
+.list-item {
   cursor: pointer;
   list-style-type: circle;
   padding: 8px;
+  opacity: 0.7;
+}
+
+.list-item:hover,
+.list-item.active {
+  opacity: 1;
+}
+
+.list-item.active {
+  font-weight: bold;
 }
 
 form {
@@ -74,12 +85,21 @@ form {
 .btn {
   cursor: pointer;
   border: 0;
-  font-size: 20px;
+  font-size: 30px;
   background-color: transparent;
+  transition: opacity 150ms ease-in;
+}
+
+.btn:hover {
+  opacity: 0.7;
 }
 
 input[type="text"] {
+  /* since each flex element has order 0, giving inp higher order than o
+  will shift it position */
+  order: 1;
   font-size: 15px;
+  width: 70%;
   outline: none;
   padding: 5px;
   background-color: transparent;
@@ -92,10 +112,27 @@ input[type="text"] {
 
 .inp.add-todo {
   border-bottom: 1px solid white;
+  transition-property: border-bottom;
+  transition-duration: 150ms;
+  transition-timing-function: ease-in;
+}
+
+/* since no outline, we set a style difference to show the field is in focus */
+.inp.add-todo:focus {
+  border-bottom: 3px solid white;
+}
+
+.inp::placeholder {
+  opacity: 0.8;
+  transition: opacity 300ms;
+}
+
+.inp:focus::placeholder {
+  opacity: 0.4;
 }
 
 .inp.add-todo::placeholder {
-  color: white;
+  color: rgb(255, 255, 255);
 }
 
 /* todo-lists section end */
@@ -130,6 +167,24 @@ input[type="text"] {
   align-items: center;
   gap: 8px;
   padding: 8px;
+  position: relative;
+}
+
+.todo-tasks-container li label {
+  cursor: pointer;
+  opacity: 0.7;
+
+  position: relative;
+}
+
+.todo-tasks-container li::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background-color: rgb(0, 0, 0, 0.2);
 }
 
 input[type="checkbox"] {
@@ -140,26 +195,76 @@ input[type="checkbox"] {
   border-radius: 50%;
   cursor: pointer;
   position: relative;
+  transform: scale(1);
+  transition: border 100ms ease-in;
+  transition: transform 150ms ease-in;
 }
 
+/* visual hint for the field in action */
+input[type="checkbox"]:hover,
+[type="checkbox"]:focus 
+/* for tab users to see the scale */ {
+  transform: scale(1.2);
+  border: 1px solid rgb(54, 112, 199);
+}
+
+input[type="checkbox"]:checked {
+  background-color: rgb(54, 112, 199);
+  border: 1.5px solid rgb(54, 112, 199);
+  box-shadow: inset 0 0 0 2px white;
+  opacity: 0.5;
+}
+
+/* 
+optional
 input[type="checkbox"]:checked::before {
   content: "\2713";
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+} */
+
+/* style is applied to the label associated with that checked checkbox */
+[type="checkbox"]:checked + label {
+  opacity: 0.5;
 }
 
-label {
-  cursor: pointer;
+[type="checkbox"] + label::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 2px;
+  background-color: rgb(0, 0, 0);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 300ms ease;
+}
+
+[type="checkbox"]:checked + label::after {
+  transform: scaleX(1);
+  transform-origin: left;
 }
 
 .todo-tasks form {
   padding-inline: 20px;
 }
 
+.btn.add-task {
+  color: rgb(54, 112, 199);
+}
+
 .inp.add-task {
   border-bottom: 1px solid black;
+  transition-property: border-bottom;
+  transition-duration: 150ms;
+  transition-timing-function: ease-in;
+}
+
+.inp.inp.add-task:focus {
+  border-bottom: 3px solid black;
 }
 
 /* clear buttons */

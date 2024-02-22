@@ -23,18 +23,11 @@
           <h3 id="all-todo-lists" class="section-title">My Lists</h3>
         </header>
         <ul class="todo-lists-container">
-          <li>Youtube</li>
-          <li>Twitter</li>
-          <li>Reddit</li>
+          <li class="list-item active">Youtube</li>
+          <li class="list-item">Twitter</li>
+          <li class="list-item">Reddit</li>
         </ul>
         <form action="">
-          <button
-            id="add-todo-btn"
-            class="btn add-todo"
-            aria-label="add-todo-list"
-          >
-            +
-          </button>
           <input
             type="text"
             name="add-todo"
@@ -43,6 +36,14 @@
             placeholder="create new list"
             aria-label="create new list"
           />
+          <!-- changing the order since for tab users button should be selected first -->
+          <button
+            id="add-todo-btn"
+            class="btn add-todo"
+            aria-label="add-todo-list"
+          >
+            +
+          </button>
         </form>
       </section>
       <section aria-label="add-clear-todo-tasks">
@@ -66,9 +67,6 @@
             </li>
           </ul>
           <form action="">
-            <button id="add-task-btn" class="btn" aria-label="add-new-task">
-              +
-            </button>
             <input
               type="text"
               name="add-task"
@@ -77,6 +75,13 @@
               placeholder="create new task"
               aria-label="create new task"
             />
+            <button
+              id="add-task-btn"
+              class="btn add-task"
+              aria-label="add-new-task"
+            >
+              +
+            </button>
           </form>
         </section>
         <section aria-label="clear-delete-btns" class="clear-delete">
