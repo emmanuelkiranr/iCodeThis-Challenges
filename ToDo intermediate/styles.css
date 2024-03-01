@@ -52,6 +52,7 @@ added under each todo */
   font-size: 20px;
   font-weight: 400;
   padding-block: 10px;
+  /* for spacing between title and count in small screens */
   margin-right: 1em;
 }
 
@@ -95,8 +96,8 @@ form {
 }
 
 input[type="text"] {
-  /* since each flex element has order 0, giving inp higher order than o
-  will shift it position */
+  /* since each flex element has order 0, giving inp higher order than 0
+  will shift its position */
   order: 1;
   font-size: 15px;
   width: 70%;

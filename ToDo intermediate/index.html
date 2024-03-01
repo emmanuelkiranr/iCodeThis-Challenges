@@ -22,21 +22,18 @@
         <header>
           <h3 id="all-todo-lists" class="section-title">My Lists</h3>
         </header>
-        <ul class="todo-lists-container">
-          <li class="list-item active">Youtube</li>
-          <li class="list-item">Twitter</li>
-          <li class="list-item">Reddit</li>
-        </ul>
-        <form action="">
+        <ul class="todo-lists-container"></ul>
+        <form action="" data-new-todo-list>
           <input
             type="text"
             name="add-todo"
             id="add-todo-inp"
             class="inp add-todo"
+            data-new-list-inp
             placeholder="create new list"
             aria-label="create new list"
           />
-          <!-- changing the order since for tab users button should be selected first -->
+          <!-- changing the order since for tab users button should be selected second -->
           <button
             id="add-todo-btn"
             class="btn add-todo"
@@ -46,27 +43,16 @@
           </button>
         </form>
       </section>
-      <section aria-label="add-clear-todo-tasks">
+      <section aria-label="add-clear-todo-tasks" data-todo-container>
         <section aria-labelledby="all-todos-task" class="todo-tasks">
           <header class="tasks-header">
-            <h3 id="all-todos-task" class="section-title">Youtube</h3>
-            <p class="task-count">3 tasks remaining</p>
+            <h3 id="all-todos-task" class="section-title" data-list-name>
+              Youtube
+            </h3>
+            <p class="task-count" data-task-count>3 tasks remaining</p>
           </header>
-          <ul class="todo-tasks-container">
-            <li>
-              <input type="checkbox" name="task-list" id="task-1" />
-              <label for="task-1">This is the first task</label>
-            </li>
-            <li>
-              <input type="checkbox" name="task-list" id="task-2" />
-              <label for="task-2">This is the second task</label>
-            </li>
-            <li>
-              <input type="checkbox" name="task-list" id="task-3" />
-              <label for="task-3">This is the third task</label>
-            </li>
-          </ul>
-          <form action="">
+          <ul class="todo-tasks-container"></ul>
+          <form action="" data-new-todo-form>
             <input
               type="text"
               name="add-task"
@@ -74,6 +60,7 @@
               class="inp add-task"
               placeholder="create new task"
               aria-label="create new task"
+              data-new-todo-inp
             />
             <button
               id="add-task-btn"
@@ -85,8 +72,10 @@
           </form>
         </section>
         <section aria-label="clear-delete-btns" class="clear-delete">
-          <button class="btn delete">Clear completed tasks</button>
-          <button class="btn delete">Delete list</button>
+          <button class="btn delete" data-clear-complete-btn>
+            Clear completed tasks
+          </button>
+          <button class="btn delete" data-delete-list-btn>Delete list</button>
         </section>
       </section>
     </main>
