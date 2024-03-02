@@ -1,25 +1,28 @@
-const todoListContainer = document.querySelector(".todo-lists-container");
-const addListForm = document.querySelector("[data-new-todo-list]");
+// list section
+const listContainer = document.querySelector(".lists-container");
+const addListForm = document.querySelector("[data-new-list-form]");
 const addListInp = document.querySelector("[data-new-list-inp]");
-const deleteList = document.querySelector("[data-delete-list-btn]");
 
-// tasks
-const todoContainer = document.querySelector("[data-todo-container]");
-const todoTaskContainer = document.querySelector(".todo-tasks-container");
+// tasks section
+const taskSection = document.querySelector(".tasks-section-container");
+const taskContainer = document.querySelector(".tasks-container");
 const selectedListName = document.querySelector("[data-list-name]");
 const taskCount = document.querySelector("[data-task-count]");
-const addTodoForm = document.querySelector("[data-new-todo-form");
-const addTodoInp = document.querySelector("[data-new-todo-inp]");
+const addTaskForm = document.querySelector("[data-new-todo-form");
+const addTaskInp = document.querySelector("[data-new-todo-inp]");
 
-const clearTodoBtn = document.querySelector("[data-clear-complete-btn]");
+// clear and delete btn
+const clearTaskBtn = document.querySelector("[data-clear-complete-btn]");
+const deleteList = document.querySelector("[data-delete-list-btn]");
 
+// store the lists to localstorage
 let list = JSON.parse(localStorage.getItem("list")) || [];
 let selectedListId = null;
 
-// user enters new task
+// list section
 addListForm.addEventListener("submit", function (e) {
   e.preventDefault();
-  if (!addListInp.value || addListInp.value.trim().length === 0) return; // maybe display an error message
+  if (!addListInp.value || addListInp.value.trim().length === 0) return;
   let newList = {
     id: Date.now().toString(),
     name: addListInp.value,
@@ -35,29 +38,21 @@ function saveRender() {
   render();
 }
 
-// store the task to local storage
 function saveToStorage() {
   localStorage.setItem("list", JSON.stringify(list));
 }
 
-// render the task and the todos container
 function render() {
-  // cause its rendering from the lists it will rerender already rendered elements so clear its
-  clearElements(todoListContainer);
-
-  // render task elements
-  displayListElements(list);
+  renderLists(list);
 
   // set the header for the todos container
   const selectedList = list.find((item) => item.id === selectedListId);
   if (selectedListId === null) {
-    todoContainer.style.display = "none";
+    taskSection.style.display = "none";
   } else {
-    todoContainer.style.display = "";
+    taskSection.style.display = "";
     selectedListName.innerText = selectedList.name;
     renderCount(selectedList);
-    clearElements(todoTaskContainer);
-    // since tasks can already exist we render it first before taking from user
     renderTasks(selectedList);
   }
 }
@@ -68,7 +63,8 @@ function clearElements(element) {
   }
 }
 
-function displayListElements() {
+function renderLists() {
+  clearElements(listContainer); // to prevent rerendering already rendered elts
   list.forEach((item) => {
     let li = document.createElement("li");
     li.innerText = item.name;
@@ -77,34 +73,35 @@ function displayListElements() {
     if (item.id === selectedListId) {
       li.classList.add("active");
     }
-    todoListContainer.appendChild(li);
+    listContainer.appendChild(li);
   });
 }
 
-function renderCount(selectedList) {
-  // filter based on incomplte tasks
-  let inCompltedTaskCount = selectedList.tasks.filter(
-    (item) => item.complete === false
-  ).length;
-  let completeString = inCompltedTaskCount === 1 ? "task" : "tasks";
-  taskCount.innerText = `${inCompltedTaskCount} ${completeString} remaining`;
-}
-
-addTodoForm.addEventListener("submit", function (e) {
-  e.preventDefault();
-  if (!addTodoInp.value || addTodoInp.value.trim().length === 0) return;
-  const selectedList = list.find((item) => item.id === selectedListId);
-
-  selectedList.tasks.push({
-    id: Date.now().toString(),
-    name: addTodoInp.value,
-    complete: false,
-  });
-  saveRender();
-  addTodoInp.value = "";
+listContainer.addEventListener("click", function (e) {
+  if (e.target.tagName.toLowerCase() === "li") {
+    selectedListId = e.target.dataset.listId;
+  }
+  render();
 });
 
+deleteList.addEventListener("click", function () {
+  list = list.filter((item) => item.id !== selectedListId);
+  selectedListId = null;
+  saveRender();
+});
+
+// task section
+function renderCount(selectedList) {
+  // filter based on incomplte tasks
+  let inCompletedTaskCount = selectedList.tasks.filter(
+    (item) => item.complete === false
+  ).length;
+  let completeString = inCompletedTaskCount === 1 ? "task" : "tasks";
+  taskCount.innerText = `${inCompletedTaskCount} ${completeString} remaining`;
+}
+
 function renderTasks(selectedList) {
+  clearElements(taskContainer);
   selectedList.tasks.forEach((item) => {
     let li = document.createElement("li");
     let input = document.createElement("input");
@@ -118,26 +115,25 @@ function renderTasks(selectedList) {
     label.innerText = item.name;
     li.appendChild(input);
     li.appendChild(label);
-    todoTaskContainer.appendChild(li);
+    taskContainer.appendChild(li);
   });
 }
 
-render();
+addTaskForm.addEventListener("submit", function (e) {
+  e.preventDefault();
+  if (!addTaskInp.value || addTaskInp.value.trim().length === 0) return;
+  const selectedList = list.find((item) => item.id === selectedListId);
 
-todoListContainer.addEventListener("click", function (e) {
-  if (e.target.tagName.toLowerCase() === "li") {
-    selectedListId = e.target.dataset.listId;
-  }
-  render();
-});
-
-deleteList.addEventListener("click", function () {
-  list = list.filter((item) => item.id !== selectedListId);
-  selectedListId = null;
+  selectedList.tasks.push({
+    id: Date.now().toString(),
+    name: addTaskInp.value,
+    complete: false,
+  });
   saveRender();
+  addTaskInp.value = "";
 });
 
-todoTaskContainer.addEventListener("click", function (e) {
+taskContainer.addEventListener("click", function (e) {
   if (e.target.tagName.toLowerCase() === "input") {
     const selectedList = list.find((item) => item.id === selectedListId);
     const selectedTask = selectedList.tasks.find(
@@ -149,9 +145,12 @@ todoTaskContainer.addEventListener("click", function (e) {
   }
 });
 
-clearTodoBtn.addEventListener("click", function () {
+clearTaskBtn.addEventListener("click", function () {
   let selectedList = list.find((item) => item.id === selectedListId);
   selectedList.tasks = selectedList.tasks.filter((item) => !item.complete);
-
-  saveRender();
+  saveToStorage();
+  renderTasks(selectedList);
+  renderCount();
 });
+
+render();

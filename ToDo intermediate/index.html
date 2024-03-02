@@ -18,40 +18,43 @@
       <h1 class="banner">ToDo-List</h1>
     </header>
     <main class="container">
-      <section aria-labelledby="all-todo-lists" class="todo-lists">
+      <section aria-labelledby="list-section" class="lists-section">
         <header>
-          <h3 id="all-todo-lists" class="section-title">My Lists</h3>
+          <h3 id="list-section" class="section-title">My Lists</h3>
         </header>
-        <ul class="todo-lists-container"></ul>
-        <form action="" data-new-todo-list>
+        <ul class="lists-container"></ul>
+        <form action="" data-new-list-form>
           <input
             type="text"
-            name="add-todo"
-            id="add-todo-inp"
-            class="inp add-todo"
-            data-new-list-inp
+            name="add-list"
+            id="add-list-inp"
+            class="inp add-list"
             placeholder="create new list"
             aria-label="create new list"
+            data-new-list-inp
           />
           <!-- changing the order since for tab users button should be selected second -->
           <button
-            id="add-todo-btn"
-            class="btn add-todo"
-            aria-label="add-todo-list"
+            id="add-list-btn"
+            class="btn add-list"
+            aria-label="add-new-list"
           >
             +
           </button>
         </form>
       </section>
-      <section aria-label="add-clear-todo-tasks" data-todo-container>
-        <section aria-labelledby="all-todos-task" class="todo-tasks">
-          <header class="tasks-header">
-            <h3 id="all-todos-task" class="section-title" data-list-name>
+      <section
+        aria-label="add-clear-todo-tasks"
+        class="tasks-section-container"
+      >
+        <section aria-labelledby="task-section" class="tasks-section">
+          <header class="tasks-section-header">
+            <h3 id="task-section" class="section-title" data-list-name>
               Youtube
             </h3>
             <p class="task-count" data-task-count>3 tasks remaining</p>
           </header>
-          <ul class="todo-tasks-container"></ul>
+          <ul class="tasks-container"></ul>
           <form action="" data-new-todo-form>
             <input
               type="text"

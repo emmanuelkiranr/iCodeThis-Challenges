@@ -39,10 +39,9 @@ added under each todo */
   justify-content: space-evenly;
 }
 
-/* todo-lists section start */
+/* lists-section section start */
 
-/* make common */
-.todo-lists {
+.lists-section {
   padding: 20px;
   width: 350px;
   color: white;
@@ -56,7 +55,7 @@ added under each todo */
   margin-right: 1em;
 }
 
-.todo-lists-container {
+.lists-container {
   margin-left: 18px;
   padding-bottom: 10px;
 }
@@ -77,6 +76,7 @@ added under each todo */
   font-weight: bold;
 }
 
+/* common styles for both section start */
 form {
   display: flex;
   align-items: center;
@@ -107,22 +107,6 @@ input[type="text"] {
   border: 0;
 }
 
-.add-todo {
-  color: white;
-}
-
-.inp.add-todo {
-  border-bottom: 1px solid white;
-  transition-property: border-bottom;
-  transition-duration: 150ms;
-  transition-timing-function: ease-in;
-}
-
-/* since no outline, we set a style difference to show the field is in focus */
-.inp.add-todo:focus {
-  border-bottom: 3px solid white;
-}
-
 .inp::placeholder {
   opacity: 0.8;
   transition: opacity 300ms;
@@ -131,23 +115,40 @@ input[type="text"] {
 .inp:focus::placeholder {
   opacity: 0.4;
 }
+/* common styles for both section end */
 
-.inp.add-todo::placeholder {
+.add-list {
+  color: white;
+}
+
+.inp.add-list {
+  border-bottom: 1px solid white;
+  transition-property: border-bottom;
+  transition-duration: 150ms;
+  transition-timing-function: ease-in;
+}
+
+/* since no outline, we set a style difference to show the field is in focus */
+.inp.add-list:focus {
+  border-bottom: 3px solid white;
+}
+
+.inp.add-list::placeholder {
   color: rgb(255, 255, 255);
 }
 
-/* todo-lists section end */
+/* lists-section section end */
 
-/* todo-tasks section start */
+/* tasks-section section start */
 
-.todo-tasks {
+.tasks-section {
   width: 400px;
   background-color: white;
   padding-bottom: 20px;
   box-shadow: 0px 0px 40px rgb(6, 30, 66);
 }
 
-.tasks-header {
+.tasks-section-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -159,11 +160,11 @@ input[type="text"] {
   font-size: small;
 }
 
-.todo-tasks-container {
+.tasks-container {
   padding: 10px 20px;
 }
 
-.todo-tasks-container li {
+.tasks-container li {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -171,14 +172,14 @@ input[type="text"] {
   position: relative;
 }
 
-.todo-tasks-container li label {
+.tasks-container li label {
   cursor: pointer;
   opacity: 0.7;
 
   position: relative;
 }
 
-.todo-tasks-container li::after {
+.tasks-container li::after {
   content: "";
   position: absolute;
   left: 0;
@@ -249,7 +250,7 @@ input[type="checkbox"]:checked::before {
   transform-origin: left;
 }
 
-.todo-tasks form {
+.tasks-section form {
   padding-inline: 20px;
 }
 
@@ -264,7 +265,7 @@ input[type="checkbox"]:checked::before {
   transition-timing-function: ease-in;
 }
 
-.inp.inp.add-task:focus {
+.inp.add-task:focus {
   border-bottom: 3px solid black;
 }
 
@@ -281,4 +282,4 @@ input[type="checkbox"]:checked::before {
   color: rgb(255, 255, 255, 0.7);
 }
 
-/* todo-tasks section end */
+/* tasks-section section end */
