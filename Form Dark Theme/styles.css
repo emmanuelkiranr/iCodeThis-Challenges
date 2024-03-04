@@ -62,6 +62,7 @@ textarea {
   color: white;
   border: 1px solid #353533;
   border-radius: 5px;
+  resize: none;
 }
 
 input[type="text"]:focus,
@@ -164,4 +165,10 @@ textarea:focus {
 
 #approve-btn:hover {
   background-color: #d9dbe8;
+}
+
+#error-msg {
+  display: none;
+  align-self: center;
+  color: rgb(190, 81, 81);
 }
