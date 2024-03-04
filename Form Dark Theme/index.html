@@ -1,0 +1,79 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main>
+      <section aria-label="add-profile" class="chat-section">
+        <button id="close-btn">X</button>
+        <header>
+          <p>Hi!</p>
+          <br />
+          <p>One of our consultants will assist you as soon as they can!</p>
+        </header>
+        <form class="details-section">
+          <label for="name">
+            <p>Name</p>
+            <input type="text" id="name" name="name" />
+          </label>
+          <label for="email">
+            <p>Email</p>
+            <input type="email" id="email" name="email" />
+          </label>
+          <label for="phno">
+            <p>Phone Number (optional)</p>
+            <input type="text" id="phno" name="phno" />
+          </label>
+          <label for="msg">
+            <p>Message</p>
+            <textarea name="msg" id="msg" cols="20" rows="4"></textarea>
+          </label>
+          <button id="chat-btn">Start chat</button>
+        </form>
+      </section>
+
+      <section aria-labelledby="subscribe" class="subscribe-section">
+        <header class="subscribe-header">
+          <img
+            width="30px"
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAAsTAAALEwEAmpwYAAAFA0lEQVR4nO2beYhVVRzHP9PL0tIZw6gkRcOSooyUFmixoqKS/ogWbcEWDas/QqioKIjonywiKCxJaEUqmkaigiLK0EJazExbJNHSQWxxbE+baXpx4Hfg1687t3Pfu/e+cx/zhQsz791zzu98z/JbHwxjGGXjBOARYB3wHbAD+Bh4CDiWNsZ44FWgnvL8DbwAjKPNcIqstp/on8BbwGLgUWAVMKC+7wVm0Ca4FtijJve07AaLSUC3eu93YDYVRg1YZFZ9XkC7BUC/OhKuj72oGMYAr6jJ/wCckaH9OcAu1f41oJOK4HDgcyX8emByg/18ofr5tMF+SsVM4PscV26M0RxuJ51OpFhQ0NlNukvcxRoN9hbDxgu4G5hbwDjzZfJ+nMdl7JZiHPC2Emq7WHpF4WTgWzXeG8BYWoRjgC1KmLXAxBLGnQCsUeN+BRxJyTgf+EkJ4czXUSWOPxpYrsbvA84ua/CFwKC67O4BOigfbszbRQYny1/yf2HYV8xYz/qvwIW0HrPFbPZyLQX2yXuQ8cD7apBtwHTiwXHAViXfu8BBRXX+Xp6dF7hIm+WibgqXlrG9cj6mz+RxTDvKvmBiuqj3B3oUi7vKVDE5YpZR1c+HqOoJMRgZOWJaFmNthglbvQ50UX0cCKw04bajkl58Tr20TLywdoG7uF9W81uS9NJy49SUYdeXhcnGiXrq/wioA5+10tPKES4gs8HMLYiAuribI6guRkj4vZ6FgA2GjCeoLpaoeXQrizaVgHWiL1erxndRPdyh5P8I2A/4OpQArz42KWvqKqqDS5Ql6CZ9sHyeiQDECOqTz13A8yzix/HKf/lZjCEaJcDhNJXash3GrO76JcFCswQ4zFGOkevkEOJUd+vVub8x4Z2GCXC4U3W+RpymmNTdm0q++4d4rykCkFS2zvq0PC4veEzJ1ZOSkGmagJpJerrkRKtxW4ad2TQBPl/3iRr0FhpzTly2+DrgGvFEG4ksX6zU3TcBd1MuBDgcKoHRugjg9G6WHOKOBPPUWaBnZujnRKPuQuJ/uRHgcDTwo8oHurRVGkYCzyZMXD+hSdVJikQXrruAMORKAKJn+1Xq2uX0hxJ4rXG33fafIpVhdwO/qe9fTDnL1ru7nnDkTgCSqtahaBsyP9X44iuHCKtPBb40BRGHJVzCul7gQbKhEAIc7lVCfSCOhz/vNqWd5l53Gi2z0wRkrRquxUJAhznf3TLZurojrg7sqyYr69u68rmbgFsTvDtiIcCrthUJF9t2ubGz4krgj4T+tg1RZtdyApDtqoVd3YSw3rPrNX2e20R/hRJwmUmjLcupZsDFJd4xO+qkmAiomSKmgQLSaLYOaU9g0WXhBHQm3NpFBk2yapVCCZgaoLeLKrwOsSsKJWCWSTymWW5FwOUwPzQG2LQyCOiQ8z0YQTHzyIRaAOcdFkbAaOAlNeAvkdQILRSHKGRBGiZgokmbbxJvMBacpzxTbyZ35UXATJM2d+myA4gPR5gq9Y0JtQ2pBPTIly6yqrfXgAk2xpw275LV9/L2mdC4T409mdR4qdLlo4Ql35GzyS+nGnDn/z5T33Sz+Cq71UL+B/ONWvF/b63oD5jmGNNc32EXJTUYq9Jg/lkVaU1gKKZLsFTPqTfNR5lrXl4hP2hcVNFnsViofj6DIfHDG4y93S6POw5XhG6dKcDDEnzsk1rBKj47ZQc8IObzMIbBv/EP7K8Er2yVSjwAAAAASUVORK5CYII="
+          />
+          <h3 id="subscribe">Subscribe to the newsletter</h3>
+        </header>
+        <form class="subscribe-form">
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Enter email address"
+          />
+          <button id="subscribe-btn">OK</button>
+        </form>
+      </section>
+
+      <section aria-label="safe-approval" class="approve-container">
+        <img
+          width="60"
+          height="55"
+          src="data:image/png;base64,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"
+        />
+        <section aria-labelledby="safety" class="approve-section">
+          <h3 id="safety">Show others that you are save</h3>
+          <p>
+            If you approve your profile with BankId, you are perceived as a
+            safer person to trade with.
+          </p>
+          <button id="approve-btn">Get started</button>
+        </section>
+      </section>
+    </main>
+  </body>
+</html>
