@@ -1,0 +1,132 @@
+/* Add CSS here */
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: small;
+  background-color: #f1f1f1;
+
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.feedback-container {
+  max-width: 420px;
+  background-color: white;
+  box-shadow: 10px 10px;
+  padding: 80px 60px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+textarea {
+  width: 100%;
+  resize: none;
+  outline: none;
+  border-width: 2px;
+  border-radius: 2px;
+  padding: 6px;
+}
+
+textarea:focus {
+  border: 2px solid black;
+  border-radius: 2px;
+}
+
+textarea::placeholder {
+  font-size: small;
+}
+
+[type="checkbox"] {
+  border-radius: 0;
+  height: 35px;
+  width: 35px;
+  accent-color: black;
+}
+
+label {
+  display: flex;
+  gap: 4%;
+}
+
+#send {
+  cursor: pointer;
+  background-color: black;
+  color: white;
+  padding-block: 15px;
+  border: 0;
+
+  transform: translate(0, 0);
+  transition: transform 300ms;
+}
+
+#send:hover {
+  transform: translate(2%, 4%);
+}
+
+.error-msg {
+  color: red;
+  text-align: center;
+}
+
+.model-container {
+  display: none;
+}
+
+.success-model {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  background-color: white;
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  animation: feedback-success 1s ease-in;
+}
+
+#close-model {
+  cursor: pointer;
+  align-self: flex-end;
+  background-color: transparent;
+  border: 0;
+  margin-bottom: -20px;
+}
+
+.reveal {
+  display: block;
+}
+
+@keyframes feedback-success {
+  from {
+    top: -100px;
+    opacity: 0;
+  }
+  to {
+    top: 50%;
+    opacity: 1;
+  }
+}

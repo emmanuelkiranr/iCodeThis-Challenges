@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./scripts.js" defer></script>
+    <title>Give feedback</title>
+  </head>
+  <body>
+    <main>
+      <section aria-labelledby="give-feedback-modal" class="feedback-container">
+        <h2 id="give-feedback-modal">Give feedback</h2>
+        <p>Your thoughts are valuable in helping improve our products.</p>
+        <form action="" data-feedback-form>
+          <textarea
+            data-feedback-inp
+            name="feedback"
+            id="feedback"
+            cols="30"
+            rows="5"
+            placeholder="Let us know what's on your mind"
+          ></textarea>
+          <label for="allow-contact">
+            <input type="checkbox" name="allow-contact" id="allow-contact" />
+            <p>
+              I may be contacted about this feedback. See our
+              <u>privacy policy</u>.
+            </p>
+          </label>
+          <label for="join-research">
+            <input type="checkbox" name="join-research" id="join-research" />
+            <p>
+              I'd like to help improve the products by joining the
+              <u>Research Group</u>.
+            </p>
+          </label>
+          <button id="send">Send feedback</button>
+        </form>
+      </section>
+      <section class="model-container">
+        <section class="success-model">
+          <button id="close-model">X</button>
+          <h3>Successfully submitted your feedback</h3>
+          <p>
+            Thanks for taking the time to provide us with your valuable
+            feedback. Your feedback will definitely help us in improving our
+            services.
+          </p>
+        </section>
+      </section>
+    </main>
+  </body>
+</html>
