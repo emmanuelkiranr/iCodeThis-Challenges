@@ -73,7 +73,8 @@ input[type="radio"]:checked::before {
   transform: translate(-50%, -50%);
 }
 
-label {
+.todo-list label,
+.completed-list label {
   padding: 6px;
   display: flex;
   align-items: center;
@@ -89,15 +90,140 @@ label {
   color: white;
 }
 
-.next-todo {
-  height: 440px;
-  width: 100px;
-  border-radius: 12px;
-  z-index: -1;
-  background-color: rgb(255, 255, 255, 0.7);
+.snackbar {
+  display: none;
+  font-size: small;
+  padding: 10px;
+  background-color: white;
+  color: #46466f;
+  border-radius: 8px;
+  border: 1px solid #46466f;
 
   position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%, 10%);
+
+  animation: show-snackbar 500ms ease-in, close-snackbar 500ms ease-out 1.5s;
+}
+
+.snackbar::before {
+  content: "\2713";
+  color: #46466f;
+  background-color: white;
+  border: 1px solid #46466f;
+
+  padding: 2px 5px;
+  margin-right: 10px;
+  border-radius: 50%;
+  font-size: small;
+}
+
+.model {
+  display: none;
+
+  max-width: 350px;
+  background-color: #c1c4e4;
+  padding: 20px;
+  border-radius: 10px;
+  position: absolute;
   top: 50%;
-  left: 73%;
-  transform: translateY(-50%);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.model.show-animation {
+  animation: show-model 500ms ease-in;
+}
+
+.model p {
+  color: #46466f;
+  font-size: medium;
+  text-align: left;
+}
+
+.model [type="text"] {
+  width: 100%;
+  outline: none;
+  padding: 10px;
+  border: 1px solid rgb(70, 70, 111, 0.5);
+  border-radius: 5px;
+  font-size: large;
+  color: #46466f;
+  margin-bottom: 20px;
+}
+
+.model [type="text"]:focus {
+  border: 1px solid rgb(70, 70, 111, 1);
+}
+
+.btn {
+  cursor: pointer;
+  width: 100px;
+  padding: 10px;
+  color: #46466f;
+  border: 1px solid #46466f;
+  border-radius: 5px;
+}
+
+.btn.add {
+  background-color: #46466f;
+  color: white;
+}
+
+.btn.add:hover {
+  background-color: #2d2d52;
+}
+
+.reveal {
+  display: block;
+}
+
+.model.close-animation {
+  animation: close-model 500ms ease-out forwards;
+}
+
+@keyframes show-model {
+  from {
+    top: -100px;
+    opacity: 0;
+  }
+  to {
+    top: 50%;
+    opacity: 1;
+  }
+}
+
+@keyframes close-model {
+  from {
+    top: 50%;
+    opacity: 1;
+  }
+  to {
+    top: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes show-snackbar {
+  from {
+    bottom: -100px;
+    opacity: 0;
+  }
+  to {
+    bottom: 10%;
+    opacity: 1;
+  }
+}
+
+@keyframes close-snackbar {
+  from {
+    bottom: 10%;
+    opacity: 1;
+  }
+  to {
+    bottom: -100px;
+    opacity: 0;
+  }
 }

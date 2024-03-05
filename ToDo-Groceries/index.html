@@ -10,6 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
+    <script src="./scripts.js" defer></script>
   </head>
   <body>
     <main class="container">
@@ -25,40 +26,30 @@
         />
       </article>
       <section class="todo-list">
-        <label for="eggs">
+        <!-- <label for="eggs">
           <input type="radio" name="groceries" id="eggs" />
           Eggs
-        </label>
-        <label for="tomatoes">
-          <input type="radio" name="groceries" id="tomatoes" />
-          Tomatoes
-        </label>
-        <label for="avacado">
-          <input type="radio" name="groceries" id="avacado" />
-          Avacado
-        </label>
+        </label> -->
       </section>
+      <p>COMPLETED <span class="complete-count"></span></p>
       <section class="completed-list">
-        <p>COMPLETED (4)</p>
-        <label for="egg-noodles">
+        <!-- <label for="egg-noodles">
           <input type="radio" name="item1" id="egg-noodles" checked />
           Egg noodles
-        </label>
-        <label for="scampi">
-          <input type="radio" name="item2" id="scampi" checked />
-          Scampi
-        </label>
-        <label for="orange-juice">
-          <input type="radio" name="item3" id="orange-juice" checked />
-          Orange juice
-        </label>
-        <label for="apples">
-          <input type="radio" name="item4" id="apples" checked />
-          Apples
-        </label>
+        </label> -->
       </section>
       <button class="add-new">+</button>
-      <div class="next-todo"></div>
     </main>
+    <div class="snackbar">Successfully added</div>
+    <section class="model show-animation">
+      <form action="" data-add-todo-form>
+        <label for="new-item">
+          <p>Enter new item:</p>
+          <input type="text" name="new-item" id="new-item" data-new-inp />
+        </label>
+        <button class="btn add" type="submit">Add</button>
+        <button class="btn close" type="button">Close</button>
+      </form>
+    </section>
   </body>
 </html>
