@@ -1,0 +1,182 @@
+/* Add CSS here */
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: small;
+  color: #3a4c59;
+
+  height: 100vh;
+  background-image: linear-gradient(to right, #345990, #1a869a);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-card {
+  max-width: 340px;
+  background-color: #effbfa;
+
+  padding-top: 5px;
+}
+
+header {
+  background-image: url(https://plus.unsplash.com/premium_photo-1674257750351-9cbd2d6658cb?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 160px;
+  position: relative;
+}
+
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.options img {
+  filter: invert(100%);
+}
+
+h2 {
+  text-align: center;
+  font-weight: 400;
+  font-size: 2em;
+  color: white;
+  margin-bottom: 10px;
+}
+
+figure {
+  width: 130px;
+  height: 130px;
+  border-radius: 100px;
+
+  background-image: url(https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  position: absolute;
+  bottom: -30%;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: inset 0 0 0 4px #70becf;
+}
+
+.description {
+  margin-block: 60px 20px;
+  padding-inline: 20px;
+  text-align: center;
+}
+
+.divider {
+  height: 1.5px;
+  width: 100%;
+  background-color: rgb(0, 0, 0, 0.2);
+}
+
+.mini-navigation {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.mini-navigation a {
+  width: 100%;
+  color: #aaaaab;
+  text-align: center;
+  font-weight: 500;
+  padding: 10px;
+}
+
+.mini-navigation a:hover {
+  background-color: #dcf0ee;
+}
+
+a.active {
+  color: #364558;
+  background-color: #dcf0ee;
+}
+
+.details {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+}
+
+.info {
+  height: 170px;
+  min-width: 100%;
+  padding: 20px;
+}
+
+.skills {
+  padding-block: 6px;
+}
+
+.skills > p {
+  color: #5f9f98;
+  font-weight: 500;
+}
+
+.skill-item {
+  width: 100%;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.skill-item.ads {
+  background-image: linear-gradient(
+    to right,
+    #394f90,
+    #16a698 70%,
+    #b8f0e2 20%
+  );
+}
+
+.skill-item.wed {
+  background-image: linear-gradient(
+    to right,
+    #394f90,
+    #16a698 90%,
+    #b8f0e2 20%
+  );
+}
+
+.skill-item.fas {
+  background-image: linear-gradient(
+    to right,
+    #394f90,
+    #16a698 40%,
+    #b8f0e2 20%
+  );
+}
+
+.btn {
+  cursor: pointer;
+  width: 100%;
+  color: white;
+  background-color: #01b5a5;
+  transition: background-color 150ms ease-in;
+  border: 0;
+  padding: 30px;
+}
+
+.btn:hover {
+  background-color: #079c8f;
+}
