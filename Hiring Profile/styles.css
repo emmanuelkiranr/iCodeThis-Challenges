@@ -31,8 +31,8 @@ body {
 .profile-card {
   max-width: 340px;
   background-color: #effbfa;
-
   padding-top: 5px;
+  position: relative;
 }
 
 header {
@@ -179,4 +179,37 @@ a.active {
 
 .btn:hover {
   background-color: #079c8f;
+}
+
+.modal {
+  display: none;
+  background-color: #effbfa;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+
+  position: absolute;
+  animation: modal 300ms ease-in;
+}
+
+#close-btn {
+  margin-top: 10px;
+  cursor: pointer;
+  background-color: transparent;
+  border-radius: 5px;
+  border: 1px solid #01b5a5;
+  padding: 5px 10px;
+}
+
+.reveal {
+  display: block;
+}
+
+@keyframes modal {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
 }
