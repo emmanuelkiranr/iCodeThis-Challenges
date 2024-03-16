@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+
+  <body>
+    <main>
+      <div class="container">
+        <div class="header">
+          <div class="icon">
+            <img
+              width="22"
+              height="25"
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAACuUlEQVR4nO2XsWsUQRTGBy0sbBSx0DKkEBFNyL63Kifx3tvEiFooBFPZWFtYWaTQ0kKwtfAPUBsRG1uJYKVF0EpFSASNoon73iZRoydz58mZZHdn3Msegf3Bcs3MvO+beW/mnTEVFRUVFRUVm5TGVbPFZ7wSXFHGRtZnyiIeG9gthM+FwolumjBliVeCaRtQGL/HUXCuWybMRtMYH98qDM86g/qasGOV4V3PTkAjPCWEy/+YIFhxSScr3hpuziOY610NdApxPIn15uiqkzBl4nMSaYYTgrOdNVGqAVcTWeJNe50/Jko3kGfCRXwbYbhmekWaUN866SnrnYTLzm8KE5tC/PzwoR06AgMawaRw+Dd1YoKVpI7X4yisxaND+xpj/dt6rdV8ZdglHJxXhpvK+FgZ5/Matc4CV4ZXwnBfGC8n9XDItzH8/waO4ZIQPG2JcBPsZgpnlPGGjAQHui58YfhwvzDcFsJv7qJAlOGL/YRQnY0w/hLCh8nxMCwsvDFycHtzVxh+pAYlmFKCSWUYiwn32zpI3YhabacdY8c25xBMZZzIT2G4lbVeJq1A+DpzxwjvmoIo4Z2c1HpjtfiJj4JhJVzIP254UNgA473c1CJcsJocxYe1Vv465CzBVFEDQvjIscgTIaxniyc85lNwyvCyqAElfOJxU6nVmL4bDLNeVx/j++IGYNovJsymG2jdxT53txY1IAxvfWIq44u8/I8dxS8nFJwpakAJLzo/igRzuQ9dEkHQeoCyC0rrOGq6hFA4sfav5pp6++D8StveRAk+p6WN1JFMl1GG08KwlFZr3m+BcjCojJ9WLTa/yHCk2+LbKAUnhWFx1YbN2FbG/A/N1pjwYyv/7G8waDYYqSO13yFb4Esc9BVaMImO7lXGC3piaI8piSUO+mxM2zuVFbOioqKiosL0gt9wW4NCbQYHCAAAAABJRU5ErkJggg=="
+            />
+            <p class="icon-text">Missed call</p>
+          </div>
+          <button class="close-modal">X</button>
+        </div>
+        <div class="profile">
+          <figure>
+            <!-- profile image goes here -->
+          </figure>
+          <div class="details">
+            <p class="from-text">You missed a call from</p>
+            <p class="name">Frederick Floyd</p>
+            <p class="time">22 hours ago</p>
+          </div>
+        </div>
+        <div class="response-options">
+          <button class="btn msg">
+            <img
+              width="14"
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEYklEQVR4nO1a+2tcRRQere+qjYqIgoqPqlVRQVEQFUHwD7DiK9b+JGhFolR8FoP+JqIYpcJi2nvP953Z6Ci+UIpWTYsPFKS1Wm1tfaCgLbX4i9pHpI2ce2eTkN2tm2x29y7kgwthz9yZOXPPa74T52Yxi1m0BSJymqjeLOTTQn0D5AYBfwR1pz32t1C/AvR1G0PyppVDQ6e6IgDA2YA+CXIjqKO1HgH/sucA8q8BfSJNh85quwIkrxbqKlD3jW0oP+3nAd8rIpe9FMLxk9+z30yWkrcL9QX7ahOU2gfyXQBXtlwBO7VssfHN/wToIwDOmO6c3vszST4K8ufxefl2M3PWxejo6EFC3gfqP3Gx780f+vv7D56pNWwukrcKuCUe0t9C3jtT87sQwtGAvhoV2G1fYHh4+BDXIpRKpUOFfAzknmxN8GUAc5uaNLNp6ufRKbcAuNC1CWlavkioW/MD5GdJkvRMa6LBwcFjQK6LE60JIcxzbUaSJD0A18Yv86VZx5QmCCHMiVHJbPX9EMKRrkMolUpHCfXD3Cr0Hdtbwy8Duix+iQ0kj3UdRghhnlC/iRHt4YZeAnAxqCOWxLz3811BQPJci5oC7m3IVwX6QdR8iSsYSPbl/qLv/d/Aa6MtftvKENtMaAa4yfaYql5Td6AVdLnGvtcVFADuiIf9Sv1QRx0BuSOEcJgrKAYGBg6P1fTemoHIyuoYble6ggPQNDMv8sYqoUCfi2Z1iys4RPW2GJCerRZWko7IAldwpGn5gpjnVlcJraI1YZH9o4IkSY6IDr/ZTYaA2wXc5boEsEqcuq2WYJuVzq5LAHKPQH+vElgStM9lRZrratNi7uxW07hudnYhn8qjli5yBQfge+uHX9EbonDQFRxClTznYWGV0O7F2YUf/NPKAFds/9hpzm632JqDAPqiF41CLo6WM1R3UOr9pQLut+RY1DJeoJtzX/ZXHXAwwDdj9OpzBQOg98fCdlVDzF/0lV2J9+e5gkBEFtiezDcs/Db0EqD3xDi90Xt/nOswkiTpqSRsQB+cIkUaQxy5ppPZHsBc20PM5G9Nmaa1KriS7Y3pE5ETXJuRZLdWfhwJui+mTZ0aMWekWIUytZaAaxMS1UtA/hCV+KRppjNnLnR5JLFHAP+QayFCZgl8fAKJ7ZsmsSfCKP9oZjtcC2B5S0QXxXZd3ukSvatFTZ7cVlvQvlsG8NeowH7rQarq6TO5Tq2K88Vacus6WTtNVO9Mvb+8XC6fNLlmW7EinGiyjJuCLh8LqbH1Jnmn6oqWKDCmSGy5peT1VSZRYWBqP7stwdaVg+sB7W9Jq20ySJ4s4L+g/jKR1heRcwB+FE1iu7XjLGEBSqF+Cup3doUW8I/c9rlOqK9ldx9gYblcPsW1EzLOed1dMRFAn8mY8fxUNxWpnKkJkufbhrP6S3WpFZVjCsRyuu69oCgIIcyxZFTHtteSvM51A0j22Y1RwN/sPxSs1gH0gW5gI2fhOoz/ANXPMP+ZwFwzAAAAAElFTkSuQmCC"
+            />
+            Send message
+          </button>
+          <button class="btn call">
+            <img
+              width="14"
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAACEElEQVR4nO3ZzYtNYRzA8Z/XUWJDGKJk5WUpWUrsyEYUNanBn6D8BbLDCv+BxcR4jSxQkxoLRnmLImXl5UZIqI9OcxY3Zu7c59zuuc9kPn/B/fac+5zn+Z2IGTN6B3swii94gK0xnWAezvpXA6tiOsAiXDe5a5E7rMQTUxuIXGE5XmjPJ/RHbjAfI9IMR25wXDUHIyd4UzHkA1ZELvBVdUORC7zUmf2RAwx1GPI8coCjHYZ8jxxgGX53EHI/coHbHYQM5HbSreIRZkcuMAtjFUJ2Rm6wLzHicuTI+KrcSwgZjFxhI34mnILXRa5wMmFVHmJh5Ah95Q9sV7F190WOsAHfEmIuYm7kCEekOV9sGJEjE09TWjkVGY+G7iTGnM5yZYwPJl5VeMzmRG6wBm8TYy5hQeQGm/AxMebmRO+ZYrVwqBzF/sKz4ohUZ8yWchacYqz5BIDtLd5TV4pBYV0xO/AjMaY4zgziapvTmQN13l9SY1T4j/XXEbOtwmOWqlHMFOqI2Yz3uu8GVtdx9H9XQ0yj2Gy6HbO2wkuzitGuhjSNlVJumFV87npI0yeKc10MGaklpCnocOJ9pl27ag0pY9Yn3jSncqb2iL+uzScSBhqttt/e30DLLfquah5jcWQ2N9ub+Lg9Le5DkaMyaDdulUf4yRRb+dKYDrCkPBVfKD4YlZ8BX+NYcc3u9e+b8d/6A8BzVur0abPMAAAAAElFTkSuQmCC"
+            />
+            Call back
+          </button>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
