@@ -92,7 +92,7 @@ body {
   gap: 10px;
 }
 
-.btn {
+.actionBtn {
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -104,15 +104,143 @@ body {
   border-radius: 3px;
 }
 
-.btn.msg {
+.actionBtn.msg {
   background-color: transparent;
   border: 1px solid #ebeef7;
   color: #a2a3a4;
 }
 
-.btn.call {
+.actionBtn.call {
   background-color: #1aa271;
   border: 0;
   color: white;
   box-shadow: 1px 1px 5px #1aa271;
+}
+
+.message-modal {
+  display: none;
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  width: 250px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.message-modal.message-modal-open-animation {
+  animation: showModal 600ms ease-in;
+}
+
+.message-modal.message-modal-close-animation {
+  animation: closeModal 600ms ease-out forwards;
+}
+
+form label {
+  color: #afb6c9;
+}
+
+form input {
+  padding: 6px;
+  font-size: small;
+  width: 100%;
+  border: 1px solid #afb6c9;
+  border-radius: 4px;
+  outline-color: #afb6c9;
+  color: #afb6c9;
+}
+
+.options {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.btn {
+  width: 80px;
+  padding: 5px 10px;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid #afb6c9;
+  border-radius: 4px;
+  color: #afb6c9;
+}
+
+.btn.send {
+  background-color: #afb6c9;
+  color: white;
+  transition: background-color 130ms ease-in;
+}
+
+.btn.send:hover {
+  background-color: #939baf;
+}
+
+.snackbar {
+  display: none;
+  background-color: white;
+  color: #afb6c9;
+  padding: 5px 10px;
+  border: 1px solid #afb6c9;
+  border-radius: 4px;
+  position: absolute;
+  bottom: 10%;
+  animation: showSnackbar 500ms ease-in, hideSnackbar 500ms ease-in 3s;
+}
+
+.success-text::before {
+  content: "\2713";
+  margin-right: 10px;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 100px;
+  text-align: center;
+  background-color: transparent;
+  border: 1px solid #afb6c9;
+}
+
+.reveal {
+  display: block;
+}
+
+@keyframes showModal {
+  from {
+    top: -100px;
+    opacity: 0;
+  }
+  to {
+    top: 50%;
+    opacity: 1;
+  }
+}
+
+@keyframes closeModal {
+  from {
+    top: 50%;
+    opacity: 1;
+  }
+  to {
+    top: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes showSnackbar {
+  from {
+    bottom: -100px;
+  }
+  to {
+    bottom: 10%;
+  }
+}
+
+@keyframes hideSnackbar {
+  from {
+    bottom: 10%;
+  }
+  to {
+    bottom: -100px;
+  }
 }
