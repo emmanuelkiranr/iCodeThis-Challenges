@@ -1,0 +1,121 @@
+/* Add CSS here */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: small;
+  background-image: linear-gradient(45deg, #6ce6ea, #67aaea);
+  color: rgb(125, 128, 130);
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  background-color: white;
+  box-shadow: 0 0 20px 10px #67aaea;
+  padding: 40px;
+  border-radius: 8px;
+  width: 400px;
+  min-height: 500px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+h3 {
+  font-size: large;
+  font-weight: 500;
+  color: rgb(0, 0, 0, 0.5);
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: rgb(0, 0, 0, 0.1);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.question {
+  font-size: 17px;
+  font-weight: 300;
+  color: rgb(0, 0, 0, 0.7);
+}
+
+label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+label p {
+  font-size: 15px;
+  font-weight: 300;
+}
+
+[type="radio"] {
+  appearance: none;
+  min-width: 18px;
+  min-height: 18px;
+  border-radius: 50%;
+  border: 1px solid rgb(125, 128, 130);
+  margin-right: 10px;
+}
+
+[type="radio"]:checked {
+  border: 1px solid #286fea;
+  background-color: #286fea;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.btn {
+  cursor: pointer;
+  padding: 10px 20px;
+  border: 0;
+  border-radius: 4px;
+}
+
+.primary {
+  width: 80%;
+  background-color: #4488ff;
+  color: white;
+  box-shadow: 1px 1px 5px #4488ff;
+  transition: background-color 150ms ease-in;
+}
+
+.primary:hover {
+  background-color: #286fea;
+}
+
+.secondary {
+  width: 20%;
+  color: rgb(0, 0, 0, 0.4);
+  background-color: transparent;
+  transition: background-color 150ms ease-in;
+}
+
+.secondary:hover {
+  background-color: rgb(0, 0, 0, 0.1);
+}
