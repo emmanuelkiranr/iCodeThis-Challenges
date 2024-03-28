@@ -150,7 +150,7 @@ clearTaskBtn.addEventListener("click", function () {
   selectedList.tasks = selectedList.tasks.filter((item) => !item.complete);
   saveToStorage();
   renderTasks(selectedList);
-  renderCount();
+  renderCount(selectedList);
 });
 
 render();
