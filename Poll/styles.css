@@ -63,6 +63,26 @@ label {
   display: flex;
   align-items: center;
   margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.disable-label {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+label:has(input:checked) {
+  opacity: 1;
+}
+
+.selected-label-option {
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.selected-label-option > input:checked {
+  display: none;
 }
 
 label p {
@@ -118,4 +138,13 @@ label p {
 
 .secondary:hover {
   background-color: rgb(0, 0, 0, 0.1);
+}
+
+.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+label:has(input:checked) .btn {
+  pointer-events: all;
 }
