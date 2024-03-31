@@ -71,18 +71,23 @@ label {
   pointer-events: none;
 }
 
-label:has(input:checked) {
-  opacity: 1;
-}
-
 .selected-label-option {
+  opacity: 1;
   color: white;
   padding: 10px 20px;
   border-radius: 5px;
 }
 
-.selected-label-option > input:checked {
+.selected-label-option > input {
   display: none;
+}
+
+.wrong-opt {
+  background-color: red;
+}
+
+.correct-opt {
+  background-color: green;
 }
 
 label p {
@@ -145,6 +150,6 @@ label p {
   pointer-events: none;
 }
 
-label:has(input:checked) .btn {
+/* label:has(input:checked) .btn {
   pointer-events: all;
-}
+} */

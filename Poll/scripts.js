@@ -103,25 +103,37 @@ submit.addEventListener("click", function () {
   submit.classList.add("disabled");
   currentSelctedOpt = null;
   disableLabel();
-  const options = selectedQnOpt;
-  const rightAns = options.find((item) => item.answer);
-  labelOpt.classList.add("selected-label-option");
-  if (rightAns.checked) {
-    labelOpt.style.backgroundColor = "green";
+  const rightOpt = selectedQnOpt.find((item) => item.answer);
+  if (rightOpt.checked) {
+    labelOpt.classList.add("selected-label-option", "correct-opt");
   } else {
-    labelOpt.style.backgroundColor = "red";
+    labelOpt.classList.add("selected-label-option", "wrong-opt");
+    const correctLabel = rightAnsLabel(rightOpt.id);
+    correctLabel.classList.add("selected-label-option", "correct-opt");
   }
   setTimeout(() => {
     nextQuestion();
-  }, 2000);
+  }, 2500);
 });
+
+// helper functions
+function rightAnsLabel(id) {
+  const labelElements = document.querySelectorAll("label");
+  let label = null;
+  labelElements.forEach((item) => {
+    if (item.firstElementChild.id == id) {
+      label = item;
+    }
+  });
+  return label;
+}
 
 function getOptions() {
   selectedQnOpt = polls.find((qn) => qn.id === currentQuestionId).options;
 }
 
 function disableLabel() {
-  let labelElements = document.querySelectorAll("label");
+  const labelElements = document.querySelectorAll("label");
   labelElements.forEach((item) => {
     item.classList.add("disable-label");
   });
