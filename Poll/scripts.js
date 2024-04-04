@@ -65,12 +65,17 @@ const question = document.querySelector(".question");
 const optionsContainer = document.querySelector(".options");
 const submit = document.querySelector("[data-submit]");
 const skip = document.querySelector("[data-skip]");
+const pollsContainer = document.querySelector(".container");
+const modal = document.querySelector(".modal-container");
+const score = document.querySelector("[data-score]");
+const retry = document.querySelector("[data-retry]");
 
 let currentQuestionId = 1;
 let selectedQn = null;
 let selectedQnOpt = [];
 let currentSelctedOpt = null;
 let labelOpt = null;
+let points = 0;
 
 function renderPoll() {
   getQuestion();
@@ -121,6 +126,7 @@ submit.addEventListener("click", function () {
   selectedQn.answered = true;
   const rightOpt = selectedQnOpt.find((item) => item.answer);
   if (rightOpt.checked) {
+    points++;
     labelOpt.classList.add("selected-label-option", "correct-opt");
   } else {
     labelOpt.classList.add("selected-label-option", "wrong-opt");
@@ -132,7 +138,23 @@ submit.addEventListener("click", function () {
   }, 2500);
 });
 
+retry.addEventListener("click", function () {
+  pollsContainer.style.display = "";
+  modal.classList.remove("reveal");
+  resetPolls();
+  renderPoll();
+});
+
 // helper functions
+function resetPolls() {
+  currentQuestionId = 1;
+  points = 0;
+  polls.forEach((item) => {
+    item.answered = false;
+    item.skipped = false;
+  });
+}
+
 function rightAnsLabel(id) {
   const labelElements = document.querySelectorAll("label");
   let label = null;
@@ -177,8 +199,9 @@ function nextQuestion() {
     });
     nextQuestion();
   } else if (answered === polls.length) {
-    console.log("over");
-    return;
+    pollsContainer.style.display = "none";
+    score.innerText = `${points}/${polls.length}`;
+    modal.classList.add("reveal");
   }
   clearElements(optionsContainer);
   renderPoll();

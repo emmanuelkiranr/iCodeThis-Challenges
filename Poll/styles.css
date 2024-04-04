@@ -150,6 +150,61 @@ label p {
   pointer-events: none;
 }
 
-/* label:has(input:checked) .btn {
-  pointer-events: all;
-} */
+.modal-container {
+  display: none;
+}
+
+.modal {
+  background-color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  box-shadow: 0 0 20px #67aaea;
+  border-radius: 5px;
+  animation: modal 300ms ease-in;
+}
+
+.modal p {
+  font-size: medium;
+  font-weight: 200;
+  color: black;
+}
+
+.modal-btn-container {
+  display: flex;
+  gap: 10px;
+}
+
+.modal-btn {
+  cursor: pointer;
+  width: 60px;
+  padding: 5px;
+  border: 0;
+  border-radius: 4px;
+  font-size: small;
+}
+
+.modal-btn.close-modal {
+  background-color: green;
+  color: white;
+}
+
+.modal-btn.retry {
+  background-color: red;
+  color: white;
+}
+
+.reveal {
+  display: block;
+}
+
+@keyframes modal {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
