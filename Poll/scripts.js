@@ -8,6 +8,8 @@ const polls = [
       { id: 3, text: "Paris", checked: false, answer: true },
       { id: 4, text: "Rome", checked: false },
     ],
+    skipped: false,
+    answered: false,
   },
   {
     id: 2,
@@ -18,6 +20,8 @@ const polls = [
       { id: 3, text: "J.K. Rowling", checked: false },
       { id: 4, text: "Charles Dickens", checked: false },
     ],
+    skipped: false,
+    answered: false,
   },
   {
     id: 3,
@@ -28,6 +32,8 @@ const polls = [
       { id: 3, text: "NH3", checked: false },
       { id: 4, text: "O2", checked: false },
     ],
+    skipped: false,
+    answered: false,
   },
   {
     id: 4,
@@ -38,6 +44,8 @@ const polls = [
       { id: 3, text: "Jupiter", checked: false },
       { id: 4, text: "Mars", checked: false, answer: true },
     ],
+    skipped: false,
+    answered: false,
   },
   {
     id: 5,
@@ -48,6 +56,8 @@ const polls = [
       { id: 3, text: "Leonardo da Vinci", checked: false, answer: true },
       { id: 4, text: "Michelangelo", checked: false },
     ],
+    skipped: false,
+    answered: false,
   },
 ];
 
@@ -57,33 +67,38 @@ const submit = document.querySelector("[data-submit]");
 const skip = document.querySelector("[data-skip]");
 
 let currentQuestionId = 1;
+let selectedQn = null;
 let selectedQnOpt = [];
 let currentSelctedOpt = null;
 let labelOpt = null;
 
-function renderPoll(questionId) {
-  const qns = polls.find((qn) => qn.id === questionId);
-  if (qns) {
-    question.innerText = qns.text;
-    const opts = qns.options;
-    opts.forEach((item) => {
+function renderPoll() {
+  getQuestion();
+  getOptions();
+  if (selectedQn) {
+    question.innerText = selectedQn.text;
+    selectedQnOpt.forEach((item) => {
       let label = document.createElement("label");
       let input = document.createElement("input");
       let p = document.createElement("p");
       label.setAttribute("for", item.id);
       input.setAttribute("type", "radio");
-      input.setAttribute("name", qns.text);
+      input.setAttribute("name", selectedQn.text);
       input.setAttribute("id", item.id);
       p.innerText = item.text;
       label.appendChild(input);
       label.appendChild(p);
       optionsContainer.appendChild(label);
     });
-    getOptions();
   }
 }
 
 skip.addEventListener("click", function () {
+  selectedQn.skipped = true;
+  let unAnswered = polls.filter((qn) => !qn.answered).length;
+  if (unAnswered === 1) {
+    return;
+  }
   nextQuestion();
 });
 
@@ -103,6 +118,7 @@ submit.addEventListener("click", function () {
   submit.classList.add("disabled");
   currentSelctedOpt = null;
   disableLabel();
+  selectedQn.answered = true;
   const rightOpt = selectedQnOpt.find((item) => item.answer);
   if (rightOpt.checked) {
     labelOpt.classList.add("selected-label-option", "correct-opt");
@@ -128,8 +144,16 @@ function rightAnsLabel(id) {
   return label;
 }
 
+function getQuestion() {
+  selectedQn = currentQuestionId
+    ? polls.find((qn) => qn.id === currentQuestionId)
+    : null;
+}
+
 function getOptions() {
-  selectedQnOpt = polls.find((qn) => qn.id === currentQuestionId).options;
+  selectedQnOpt = currentQuestionId
+    ? polls.find((qn) => qn.id === currentQuestionId).options
+    : null;
 }
 
 function disableLabel() {
@@ -140,9 +164,24 @@ function disableLabel() {
 }
 
 function nextQuestion() {
-  nextQnId = ++currentQuestionId;
+  let answered;
+  currentQuestionId = polls.find((qn) => !qn.answered && !qn.skipped)?.id;
+  if (!currentQuestionId) {
+    answered = polls.filter((qn) => qn.answered).length;
+  }
+  if (!currentQuestionId && answered !== polls.length) {
+    polls.forEach((item) => {
+      if (!item.answered) {
+        item.skipped = false;
+      }
+    });
+    nextQuestion();
+  } else if (answered === polls.length) {
+    console.log("over");
+    return;
+  }
   clearElements(optionsContainer);
-  renderPoll(nextQnId);
+  renderPoll();
 }
 
 function clearElements(container) {
@@ -152,4 +191,4 @@ function clearElements(container) {
   }
 }
 
-renderPoll(currentQuestionId);
+renderPoll();
