@@ -1,0 +1,210 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Poppins", sans-serif;
+  background-color: #e9f3ee;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+.card {
+  width: 350px;
+  height: 500px;
+  background-color: white;
+
+  position: fixed;
+  inset: 0;
+  max-width: 100vw;
+  max-height: 100dvh;
+  margin: auto;
+}
+
+.card-banner {
+  height: 200px;
+  padding: 10px;
+  background-image: url("https://www.tvguide.com/a/img/resize/37927db9b380c0a6858253e63ed9bdabeeaea763/catalog/provider/1/2/1-5164672802.jpg?auto=webp&fit=crop&height=675&width=1200");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 5px 5px 0px 0px;
+}
+
+.card-banner::before {
+  content: "";
+  background-image: linear-gradient(45deg, rgb(100, 99, 153), transparent);
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  border-radius: 5px 5px 0px 0px;
+}
+
+.back-btn {
+  filter: invert(1);
+  cursor: pointer;
+  width: max-content;
+}
+
+.name-location {
+  color: white;
+  z-index: 1;
+}
+
+.movie-title {
+  font-weight: 500;
+}
+
+.theater {
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.index-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-block: 10px;
+}
+
+.index {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.index-text {
+  margin-top: 4px;
+  font-size: small;
+}
+
+.seating-arrangements {
+  display: flex;
+  padding: 5px;
+}
+
+.row-letters {
+  display: grid;
+  place-items: center;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
+  font-size: small;
+  color: #bdc7cc;
+}
+
+.seat {
+  width: 95%;
+  margin-inline: auto;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 30px 1fr 1fr 1fr 1fr;
+  place-items: center;
+}
+
+.five {
+  grid-column-start: 6;
+}
+
+.five,
+.six,
+.seven,
+.eight {
+  place-self: center;
+}
+
+.seat > div {
+  margin-block: 2px;
+}
+
+.screen-direction {
+  display: flex;
+  flex-direction: column;
+  gap: -10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.screen-caption {
+  font-size: small;
+  color: #bdc7cc;
+}
+
+.screen {
+  width: 80%;
+  height: 1rem;
+  border-bottom: 2px solid #58849a;
+  border-radius: 40%;
+  box-shadow: inset 0 -1px 1px #58849a;
+}
+
+.ticket-details {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ed417a;
+  color: white;
+  padding-inline: 0 10px;
+}
+
+.details {
+  display: flex;
+  gap: 10px;
+}
+
+.name {
+  background-color: #da3768;
+  padding: 10px;
+}
+
+.value {
+  padding: 10px;
+}
+
+button {
+  height: 60px;
+  width: 100px;
+  cursor: pointer;
+  border-radius: 10px;
+  border: 0;
+}
