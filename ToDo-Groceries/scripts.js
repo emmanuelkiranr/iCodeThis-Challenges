@@ -89,6 +89,7 @@ closeModel.addEventListener("click", function (e) {
       model.classList.remove("reveal");
       model.classList.remove("close-animation");
       model.classList.add("show-animation");
+      modelInp.value = "";
     },
     { once: true } // makes sure the animationend event listner is removed after it's called
   );
