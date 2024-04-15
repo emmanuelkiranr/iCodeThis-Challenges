@@ -1,8 +1,9 @@
-const toCartBtn = document.querySelector("[data-addToCart]");
-const cartBtn = document.querySelectorAll("[data-secondaryBtn]");
+const primaryBtn = document.querySelector("[data-addToCart]");
+const secondaryBtn = document.querySelectorAll("[data-secondaryBtn]");
 const modal = document.querySelector(".modal-container");
+const modalText = document.querySelector(".modal-text");
 
-cartBtn.forEach((btn) => {
+secondaryBtn.forEach((btn) => {
   btn.addEventListener("click", function () {
     const btnText = btn.querySelector("[data-btnText]");
     const icon = btn.querySelector("svg");
@@ -30,32 +31,45 @@ cartBtn.forEach((btn) => {
   });
 });
 
-toCartBtn.addEventListener("click", function () {
+primaryBtn.addEventListener("click", function () {
   const cart = document.querySelector(".cart-btn");
-  cartBtn.forEach((btn) => {
-    const icon = btn.querySelector("svg");
-    const btnText = btn.querySelector("[data-btnText]");
+  secondaryBtn.forEach((btn) => {
     if (btn === cart) {
+      const icon = btn.querySelector("svg");
+      const btnText = btn.querySelector("[data-btnText]");
+      if (icon.classList.contains("filled")) {
+        modalText.innerText = "Already added!";
+      } else {
+        modalText.innerText = "Successfully addded to cart";
+      }
       icon.classList.add("filled");
       btnText.innerText = "Remove item";
     }
   });
   modal.classList.add("reveal");
-  modal.classList.add("reveal-animation");
-  modal.addEventListener(
-    "animationend",
-    function () {
-      modal.classList.remove("reveal-animation");
-      modal.classList.add("close-animation");
-      modal.addEventListener(
-        "animationend",
-        function () {
-          modal.classList.remove("reveal");
-          modal.classList.remove("close-animation");
-        },
-        { once: true }
-      );
-    },
-    { once: true }
-  );
+  // modal.classList.add("reveal-animation");
+  // modal.addEventListener(
+  //   "animationend",
+  //   function () {
+  //     modal.classList.remove("reveal-animation");
+  //     modal.classList.add("close-animation");
+  //     modal.addEventListener(
+  //       "animationend",
+  //       function () {
+  //         modal.classList.remove("reveal");
+  //         modal.classList.remove("close-animation");
+  //       },
+  //       { once: true }
+  //     );
+  //   },
+  //   { once: true }
+  // );
+  let animationCount = 0;
+  modal.addEventListener("animationend", function () {
+    animationCount++;
+    if (animationCount === 2) {
+      modal.classList.remove("reveal");
+      animationCount = 0;
+    }
+  });
 });

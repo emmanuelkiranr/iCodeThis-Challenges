@@ -157,15 +157,16 @@ h6 {
   bottom: 10%;
   left: 50%;
   transform: translate(-50%, -10%);
+  animation: modal 500ms ease-in, close-modal 500ms ease-out 1.5s;
 }
 
-.reveal-animation {
+/* .reveal-animation {
   animation: modal 500ms ease-in;
 }
 
 .close-animation {
   animation: close-modal 500ms ease-out 1.5s;
-}
+} */
 
 .modal {
   background-color: white;
