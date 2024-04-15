@@ -47,8 +47,8 @@ h6 {
 .product-page {
   position: fixed;
   inset: 0;
-  width: 600px;
-  height: 400px;
+  width: min(100% - 3rem, 600px);
+  height: fit-content;
   max-width: 100vw;
   max-height: 100dvh;
   margin: auto;
@@ -58,15 +58,18 @@ h6 {
   border-radius: 5px;
   padding: 30px;
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
 }
 
 .product-image {
+  margin-inline: auto;
   flex-basis: 200px;
-  flex-shrink: 0;
-  background-image: url("https://i.postimg.cc/KzmqvTqD/headphones.png");
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
+}
+
+.product-details {
+  flex-grow: 1;
+  flex-basis: 300px;
 }
 
 .pill {
@@ -130,6 +133,7 @@ h6 {
 .options {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .btn.btn-secondary {
@@ -137,7 +141,14 @@ h6 {
   align-items: center;
   justify-content: center;
   gap: 5px;
-  width: 140px;
+  flex-basis: 140px;
+  flex-wrap: wrap;
   background-color: transparent;
   border: 1px solid #d3d3d9;
+}
+
+@media (width < 500px) {
+  .btn.btn-secondary {
+    flex-basis: 100%;
+  }
 }
