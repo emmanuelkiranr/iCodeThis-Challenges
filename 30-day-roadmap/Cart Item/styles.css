@@ -147,6 +147,72 @@ h6 {
   border: 1px solid #d3d3d9;
 }
 
+.btn.btn-secondary svg.filled {
+  fill: black;
+}
+
+.modal-container {
+  display: none;
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%, -10%);
+}
+
+.reveal-animation {
+  animation: modal 500ms ease-in;
+}
+
+.close-animation {
+  animation: close-modal 500ms ease-out 1.5s;
+}
+
+.modal {
+  background-color: white;
+  font-size: small;
+  width: max-content;
+  padding: 6px;
+  border-radius: 5px;
+  border: 1px solid #d3d3d9;
+}
+
+.modal-text::before {
+  content: "\2713";
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  text-align: center;
+  margin-right: 5px;
+  color: black;
+  border: 1px solid black;
+  border-radius: 50%;
+}
+
+.reveal {
+  display: block;
+}
+
+@keyframes modal {
+  from {
+    bottom: -100px;
+    opacity: 0;
+  }
+  to {
+    bottom: 10%;
+    opacity: 1;
+  }
+}
+
+@keyframes close-modal {
+  from {
+    bottom: 10%;
+    opacity: 1;
+  }
+  to {
+    bottom: -100px;
+    opacity: 0;
+  }
+}
 @media (width < 500px) {
   .btn.btn-secondary {
     flex-basis: 100%;
