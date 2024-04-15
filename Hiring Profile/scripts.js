@@ -9,7 +9,6 @@ const hiredUser = document.querySelector("#user");
 miniNav.addEventListener("click", function (e) {
   for (let index = 0; index < miniNav.children.length; index++) {
     const element = miniNav.children[index];
-    console.log(e.target, element);
     if (e.target === element) {
       element.classList.add("active");
     } else {
