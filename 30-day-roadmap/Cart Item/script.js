@@ -31,6 +31,7 @@ secondaryBtn.forEach((btn) => {
   });
 });
 
+let animationInProgress = false;
 primaryBtn.addEventListener("click", function () {
   const cart = document.querySelector(".cart-btn");
   secondaryBtn.forEach((btn) => {
@@ -39,6 +40,7 @@ primaryBtn.addEventListener("click", function () {
       const btnText = btn.querySelector("[data-btnText]");
       if (icon.classList.contains("filled")) {
         modalText.innerText = "Already added!";
+        return;
       } else {
         modalText.innerText = "Successfully addded to cart";
       }
@@ -46,30 +48,54 @@ primaryBtn.addEventListener("click", function () {
       btnText.innerText = "Remove item";
     }
   });
+  if (animationInProgress) {
+    return;
+  }
+  handleModalAnimation(modal);
+});
+
+function handleModalAnimation(modal) {
+  animationInProgress = true;
   modal.classList.add("reveal");
-  // modal.classList.add("reveal-animation");
-  // modal.addEventListener(
-  //   "animationend",
-  //   function () {
-  //     modal.classList.remove("reveal-animation");
-  //     modal.classList.add("close-animation");
-  //     modal.addEventListener(
-  //       "animationend",
-  //       function () {
-  //         modal.classList.remove("reveal");
-  //         modal.classList.remove("close-animation");
-  //       },
-  //       { once: true }
-  //     );
-  //   },
-  //   { once: true }
-  // );
+
   let animationCount = 0;
-  modal.addEventListener("animationend", function () {
+  modal.addEventListener("animationend", handleAnimationEnd);
+
+  function handleAnimationEnd() {
     animationCount++;
+    console.log(animationCount);
     if (animationCount === 2) {
       modal.classList.remove("reveal");
       animationCount = 0;
+      modal.removeEventListener("animationend", handleAnimationEnd);
+      animationInProgress = false;
     }
-  });
-});
+  }
+}
+
+// function handleModalAnimation(modal) {
+//   animationInProgress = true;
+//   modal.classList.add("reveal", "reveal-animation");
+
+//   modal.addEventListener("animationend", handleRevealAnimationEnd, {
+//     once: true,
+//   });
+
+//   function handleRevealAnimationEnd() {
+//     modal.classList.remove("reveal-animation");
+//     modal.classList.add("close-animation");
+
+//     modal.removeEventListener("animationend", handleRevealAnimationEnd);
+
+//     modal.addEventListener("animationend", handleCloseAnimationEnd, {
+//       once: true,
+//     });
+//   }
+
+//   function handleCloseAnimationEnd() {
+//     modal.classList.remove("reveal", "close-animation");
+
+//     modal.removeEventListener("animationend", handleCloseAnimationEnd);
+//     animationInProgress = false;
+//   }
+// }
