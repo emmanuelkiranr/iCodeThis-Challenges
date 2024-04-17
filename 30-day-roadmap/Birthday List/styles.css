@@ -74,6 +74,13 @@ li {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  height: 280px;
+  overflow-y: hidden;
+}
+
+.list-scroll {
+  height: 310px;
+  overflow-y: scroll;
 }
 
 .user-profile {
@@ -98,10 +105,19 @@ li {
 
 .btn {
   cursor: pointer;
+  font-size: small;
   padding: 10px;
   background-image: linear-gradient(to right, #e76fd1, #ff6ba6);
   color: white;
   border: 0;
   border-radius: 4px;
   box-shadow: 0 4px 8px #ff6ba6;
+}
+
+.btn-secondary {
+  border: 1px solid #e76fd1;
+  background-image: none;
+  background-color: transparent;
+  box-shadow: none;
+  color: #e76fd1;
 }

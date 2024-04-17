@@ -34,4 +34,25 @@ const profileInfo = [
       "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fHw%3D",
     age: 29,
   },
+  {
+    id: 6,
+    name: "Rookie joe",
+    image:
+      "https://images.unsplash.com/photo-1484588168347-9d835bb09939?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDN8fHxlbnwwfHx8fHw%3D",
+    age: 27,
+  },
+  {
+    id: 7,
+    name: "Solone evan",
+    image:
+      "https://images.unsplash.com/photo-1440589473619-3cde28941638?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fHw%3D",
+    age: 30,
+  },
+  {
+    id: 8,
+    name: "Jons penn",
+    image:
+      "https://images.unsplash.com/photo-1581403341630-a6e0b9d2d257?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDZ8fHxlbnwwfHx8fHw%3D",
+    age: 25,
+  },
 ];
