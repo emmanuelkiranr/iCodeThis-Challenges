@@ -1,0 +1,88 @@
+/* Write your CSS code here */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Poppins", sans-serif;
+  background-color: #f072c6;
+  position: relative;
+  height: 100dvh;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+.error-page {
+  text-align: center;
+  color: white;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100dvh;
+}
+
+.title {
+  font-size: small;
+}
+
+.status-code {
+  font-size: 10rem;
+  font-weight: 500;
+  transition: font-size 1s ease-in;
+}
+
+.error-msg {
+  margin-top: -40px;
+  font-size: small;
+  font-weight: 500;
+}
+
+.contact {
+  margin-top: 30px;
+  font-size: small;
+  color: #ffb9e1;
+}
+
+.contact > a {
+  color: #ffb9e1;
+}
+
+@media (width < 300px) {
+  .status-code {
+    font-size: 7rem;
+  }
+}
