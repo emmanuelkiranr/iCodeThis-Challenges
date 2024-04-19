@@ -151,6 +151,11 @@ input[type="password"] {
   width: 70%;
 }
 
+.error {
+  font-size: x-small;
+  color: red;
+}
+
 .btn-new {
   background-color: #30456c;
   transition: background-color 150ms ease-in;
@@ -162,6 +167,61 @@ input[type="password"] {
 
 .disclaimer {
   font-size: x-small;
+}
+
+.modal-container {
+  display: none;
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%, -10%);
+  animation: modal 500ms ease-in, close-modal 500ms ease-out 1.5s;
+}
+
+.modal {
+  padding: 5px;
+  background-color: white;
+  border: 1px solid #30456c;
+  border-radius: 4px;
+  width: fit-content;
+  font-size: small;
+}
+
+.modal-text::before {
+  content: "\2713";
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  border-radius: 50%;
+  border: 1px solid #30456c;
+  text-align: center;
+  margin-right: 4px;
+}
+
+.reveal {
+  display: block;
+}
+
+@keyframes modal {
+  from {
+    bottom: -100px;
+    opacity: 0;
+  }
+  to {
+    bottom: 10%;
+    opacity: 1;
+  }
+}
+
+@keyframes close-modal {
+  from {
+    bottom: 10%;
+    opacity: 1;
+  }
+  to {
+    bottom: -100px;
+    opacity: 0;
+  }
 }
 
 @media (width < 500px) {

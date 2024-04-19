@@ -10,6 +10,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
     <title>Signup Form</title>
   </head>
   <body>
@@ -30,13 +31,14 @@
       <div class="separator">
         <span>Or</span>
       </div>
-      <form action="" class="new-account">
+      <form action="" class="new-account" data-new-account>
         <div class="username">
           <input
             type="text"
             name="firstName"
             id="firstName"
             placeholder="First name"
+            required
           />
           <input
             type="text"
@@ -45,14 +47,22 @@
             placeholder="Last name"
           />
         </div>
-        <input type="email" name="email" id="email" placeholder="Email" />
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Email"
+          required
+        />
         <input
           type="password"
           name="password"
           id="password"
           placeholder="Password"
+          required
         />
-        <button class="btn btn-new">Create New Account</button>
+        <span class="error"></span>
+        <button type="submit" class="btn btn-new">Create New Account</button>
       </form>
       <p class="disclaimer">
         By joining, you agree to our
@@ -60,6 +70,11 @@
         and
         <a href="#">Privacy Policy</a>
       </p>
+    </div>
+    <div class="modal-container">
+      <div class="modal">
+        <p class="modal-text">Successfully created account</p>
+      </div>
     </div>
   </body>
 </html>
