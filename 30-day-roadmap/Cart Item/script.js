@@ -63,7 +63,6 @@ function handleModalAnimation(modal) {
 
   function handleAnimationEnd() {
     animationCount++;
-    console.log(animationCount);
     if (animationCount === 2) {
       modal.classList.remove("reveal");
       animationCount = 0;

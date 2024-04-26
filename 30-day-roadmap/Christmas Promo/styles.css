@@ -117,3 +117,118 @@ h6 {
   color: #242c4d;
   box-shadow: none;
 }
+
+.modal-container {
+  display: none;
+  position: absolute;
+  animation: modal 500ms ease-in;
+}
+
+.modal {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  background-color: white;
+  color: #242c4d;
+  padding: 20px;
+  border: 1px solid #242c4d;
+  border-radius: 5px;
+}
+
+.modal-text {
+  font-size: small;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+.coupon {
+  width: 50%;
+  margin-inline: auto;
+  position: relative;
+  display: flex;
+}
+
+input[id="coupon"] {
+  padding: 3px;
+  outline: none;
+  color: #242c4d;
+  border: 1px solid #242c4d;
+  border-radius: 3px;
+  width: 100%;
+}
+
+.coupon > svg {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 3px;
+  cursor: pointer;
+}
+
+.btn-secondary {
+  padding: 5px;
+  width: fit-content;
+  margin-inline: auto;
+  background-color: #ad8741;
+  color: white;
+  box-shadow: 0 0 5px #ad8741;
+  transition: all 150ms ease-in;
+}
+
+.btn.btn-secondary:hover {
+  background-color: #917032;
+  box-shadow: none;
+}
+
+.copyModal-container {
+  display: none;
+  position: absolute;
+  bottom: 10%;
+  animation: show 300ms ease-in, hide 300ms ease-out 1000ms forwards;
+}
+
+.copyModal {
+  padding: 8px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.reveal {
+  display: block;
+}
+
+@keyframes modal {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes show {
+  from {
+    bottom: -100px;
+    opacity: 0;
+  }
+  to {
+    bottom: 10%;
+    opacity: 1;
+  }
+}
+
+@keyframes hide {
+  from {
+    bottom: 10%;
+    opacity: 1;
+  }
+  to {
+    bottom: -100px;
+    opacity: 0;
+  }
+}
