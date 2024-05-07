@@ -1,0 +1,123 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Poppins", sans-serif;
+  background-color: #f0f3fc;
+  height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+.basic-container {
+  display: none;
+  background-color: white;
+  padding: 10px;
+  position: absolute;
+  top: 10%;
+  right: 2%;
+  transform: translateY(-10%);
+  animation: open 300ms ease-in, close 300ms ease-out 3s forwards;
+}
+
+.rounded-container {
+  display: none;
+  background-color: white;
+  border-radius: 100px;
+  padding: 10px;
+  position: absolute;
+  top: 20%;
+  right: 2%;
+  transform: translateY(-10%);
+  animation: open 300ms ease-in, close 300ms ease-out 3s forwards;
+}
+
+.snackbar {
+  display: flex;
+  justify-content: space-between;
+  width: 600px;
+}
+
+.text {
+  font-size: small;
+}
+
+.text::before {
+  content: "\2713";
+  margin-right: 5px;
+  color: white;
+  background-color: #0ac234;
+  display: inline-block;
+  width: 20px;
+  aspect-ratio: 1;
+  text-align: center;
+  border-radius: 50%;
+}
+
+svg {
+  cursor: pointer;
+}
+
+.reveal {
+  display: block;
+}
+
+@keyframes open {
+  from {
+    right: -600px;
+    opacity: 0;
+  }
+
+  to {
+    right: 2%;
+    opacity: 1;
+  }
+}
+
+@keyframes close {
+  from {
+    right: 2%;
+    opacity: 1;
+  }
+
+  to {
+    right: -600px;
+    opacity: 0;
+  }
+}
