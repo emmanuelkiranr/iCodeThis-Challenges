@@ -16,52 +16,31 @@
   <body>
     <button class="btn" data-basic="basic">basic</button>
     <button class="btn" data-rounded="rounded">rounded</button>
-    <button class="btn" data-timer="timer">rounded</button>
+    <button class="btn" data-timer="timer">timer</button>
 
-    <div class="basic-container">
-      <div class="snackbar">
-        <p class="text">File has been removed successfully.</p>
-        <svg
-          data-close
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="#bcbfd2"
-          width="20"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M6 18 18 6M6 6l12 12"
-          />
-        </svg>
+    <div class="toast-container"></div>
+
+    <template id="template">
+      <div class="container">
+        <div class="snackbar">
+          <p class="text">File has been removed successfully.</p>
+          <svg
+            data-close
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="#bcbfd2"
+            width="20"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M6 18 18 6M6 6l12 12"
+            />
+          </svg>
+        </div>
       </div>
-    </div>
-    <div class="rounded-container">
-      <div class="snackbar">
-        <p class="text">File has been removed successfully.</p>
-        <svg
-          data-close
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="#bcbfd2"
-          width="20"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M6 18 18 6M6 6l12 12"
-          />
-        </svg>
-      </div>
-    </div>
-    <div class="timer-container">
-      <div class="snackbar timer">
-        <p class="text">File has been removed successfully.</p>
-      </div>
-    </div>
+    </template>
   </body>
 </html>

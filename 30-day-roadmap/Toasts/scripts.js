@@ -4,54 +4,28 @@ const basicSnackbar = document.querySelector(".basic-container");
 const roundedSnackbar = document.querySelector(".rounded-container");
 const timerSnackbar = document.querySelector(".timer-container");
 
-let animation = {
-  animationOneInProgress: false,
-  animationTwoInProgress: false,
-  animationThreeInProgress: false,
-};
+const template = document.querySelector("#template");
+const container = document.querySelector(".toast-container");
 
 btns.forEach((btn) => {
-  btn.addEventListener("click", function (e) {
-    if (btn.dataset.basic === "basic") {
-      startAnimation(basicSnackbar, "animationOneInProgress");
-    } else if (btn.dataset.rounded === "rounded") {
-      startAnimation(roundedSnackbar, "animationTwoInProgress");
+  btn.addEventListener("click", function () {
+    const toast = template.content.cloneNode(true);
+    const snackbar = toast.querySelector(".snackbar");
+    const svg = toast.querySelector("[data-close]");
+
+    if (btn.dataset.rounded === "rounded") {
+      snackbar.classList.add("rounded");
     } else if (btn.dataset.timer === "timer") {
-      startAnimation(timerSnackbar, "animationThreeInProgress");
+      svg.remove();
+      snackbar.classList.add("timer");
     }
+
+    container.appendChild(toast);
+    // svg.addEventListener("click", function () {
+    //   container.removeChild(container.firstElementChild);
+    // });
+    setTimeout(() => {
+      container.removeChild(container.firstElementChild);
+    }, 6500);
   });
 });
-
-function startAnimation(snackbar, animationInProgress) {
-  if (animation[animationInProgress]) return;
-  let animationCount = 0;
-  animation[animationInProgress] = true;
-
-  snackbar.classList.add("reveal");
-  let closeBtn = snackbar.querySelector("[data-close]");
-  if (!snackbar.classList.contains("timer-container")) {
-    closeBtn.addEventListener("click", function () {
-      reset(snackbar, animationInProgress);
-    });
-  }
-
-  snackbar.addEventListener("animationend", handleAnimation);
-  function handleAnimation() {
-    console.log(snackbar);
-    animationCount++;
-    if (
-      animationCount === 2 &&
-      !snackbar.classList.contains("timer-container")
-    ) {
-      reset(snackbar, animationInProgress);
-    } else if (animationCount === 3) {
-      reset(snackbar, animationInProgress);
-    }
-  }
-
-  function reset(snackbar, animationInProgress) {
-    animation[animationInProgress] = false;
-    snackbar.removeEventListener("animationend", handleAnimation);
-    snackbar.classList.remove("reveal");
-  }
-}
