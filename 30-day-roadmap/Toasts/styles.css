@@ -68,10 +68,37 @@ h6 {
   animation: open 300ms ease-in, close 300ms ease-out 3s forwards;
 }
 
+.timer-container {
+  display: none;
+  text-align: center;
+  background-color: white;
+  padding: 10px;
+  position: absolute;
+  top: 30%;
+  right: 2%;
+  transform: translateY(-10%);
+  animation: open 300ms ease-in, close 300ms ease-out 3s forwards;
+}
+
 .snackbar {
   display: flex;
   justify-content: space-between;
   width: 600px;
+}
+
+.timer-container .snackbar {
+  justify-content: center;
+}
+
+.timer-container .snackbar::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 100%;
+  background-color: #cac9de;
+  animation: timer 2.7s linear forwards;
 }
 
 .text {
@@ -119,5 +146,11 @@ svg {
   to {
     right: -600px;
     opacity: 0;
+  }
+}
+
+@keyframes timer {
+  100% {
+    width: 0;
   }
 }

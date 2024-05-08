@@ -1,3 +1,3 @@
 ## Toasts
 
-![toasts](https://i.postimg.cc/3xHrcfdc/toasts.png)
+![toasts](https://i.postimg.cc/cLHYswcy/toast-msg.png)

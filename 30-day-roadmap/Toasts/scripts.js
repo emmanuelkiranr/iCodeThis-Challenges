@@ -2,10 +2,12 @@ const btns = document.querySelectorAll(".btn");
 
 const basicSnackbar = document.querySelector(".basic-container");
 const roundedSnackbar = document.querySelector(".rounded-container");
+const timerSnackbar = document.querySelector(".timer-container");
 
 let animation = {
   animationOneInProgress: false,
   animationTwoInProgress: false,
+  animationThreeInProgress: false,
 };
 
 btns.forEach((btn) => {
@@ -14,6 +16,8 @@ btns.forEach((btn) => {
       startAnimation(basicSnackbar, "animationOneInProgress");
     } else if (btn.dataset.rounded === "rounded") {
       startAnimation(roundedSnackbar, "animationTwoInProgress");
+    } else if (btn.dataset.timer === "timer") {
+      startAnimation(timerSnackbar, "animationThreeInProgress");
     }
   });
 });
@@ -25,14 +29,22 @@ function startAnimation(snackbar, animationInProgress) {
 
   snackbar.classList.add("reveal");
   let closeBtn = snackbar.querySelector("[data-close]");
-  closeBtn.addEventListener("click", function () {
-    reset(snackbar, animationInProgress);
-  });
+  if (!snackbar.classList.contains("timer-container")) {
+    closeBtn.addEventListener("click", function () {
+      reset(snackbar, animationInProgress);
+    });
+  }
 
   snackbar.addEventListener("animationend", handleAnimation);
   function handleAnimation() {
+    console.log(snackbar);
     animationCount++;
-    if (animationCount === 2) {
+    if (
+      animationCount === 2 &&
+      !snackbar.classList.contains("timer-container")
+    ) {
+      reset(snackbar, animationInProgress);
+    } else if (animationCount === 3) {
       reset(snackbar, animationInProgress);
     }
   }
