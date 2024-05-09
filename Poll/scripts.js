@@ -7,25 +7,12 @@ const modal = document.querySelector(".modal-container");
 const score = document.querySelector("[data-score]");
 const retry = document.querySelector("[data-retry]");
 
-let polls = [];
 let currentQuestionId = 1;
 let selectedQn = null;
 let selectedQnOpt = [];
 let currentSelctedOpt = null;
 let labelOpt = null;
 let points = 0;
-
-async function fetchPolls() {
-  await fetch(`https://mocki.io/v1/61aa7c4a-881a-48fc-abbc-2df12157db06`)
-    .then((res) => {
-      return res.json();
-    })
-    .then((data) => {
-      polls = data;
-      // localStorage.setItem("polls", JSON.stringify(data));
-    });
-  renderPoll();
-}
 
 function renderPoll() {
   getQuestion();
@@ -49,11 +36,13 @@ function renderPoll() {
 }
 
 skip.addEventListener("click", function () {
+  currentSelctedOpt = null;
   selectedQn.skipped = true;
   let unAnswered = polls.filter((qn) => !qn.answered).length;
   if (unAnswered === 1) {
     return;
   }
+  submit.classList.add("disabled");
   nextQuestion();
 });
 
@@ -71,6 +60,8 @@ optionsContainer.addEventListener("click", function (e) {
 
 submit.addEventListener("click", function () {
   submit.classList.add("disabled");
+  skip.classList.add("disabled");
+
   currentSelctedOpt = null;
   disableLabel();
   selectedQn.answered = true;
@@ -85,6 +76,7 @@ submit.addEventListener("click", function () {
   }
   setTimeout(() => {
     nextQuestion();
+    skip.classList.remove("disabled");
   }, 2500);
 });
 
@@ -164,4 +156,4 @@ function clearElements(container) {
   }
 }
 
-fetchPolls();
+renderPoll();
