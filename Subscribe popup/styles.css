@@ -1,0 +1,119 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Poppins", sans-serif;
+  background-image: linear-gradient(135deg, #80c2f4, #4b67e2);
+  height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+.container {
+  background-color: white;
+  padding: 50px;
+  width: min(100% - 3rem, 500px);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+}
+
+.bg {
+  position: absolute;
+  top: 6%;
+  left: 3.5%;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  z-index: -1;
+  background-color: #496bd9;
+}
+
+.title {
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.details {
+  font-size: x-small;
+}
+
+.form {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.form > * {
+  flex-grow: 1;
+}
+
+[type="email"] {
+  min-width: 0;
+  outline: none;
+  font-size: small;
+  width: 200px;
+  padding: 8px;
+  border: 1px solid rgb(189, 186, 186);
+}
+
+[type="email"]::placeholder {
+  font-size: x-small;
+}
+
+.btn {
+  cursor: pointer;
+  font-size: small;
+  width: 100px;
+  background-color: #587ee9;
+  color: white;
+  border: 0;
+  padding: 9px;
+}
+
+.close {
+  position: absolute;
+  cursor: pointer;
+  background: none;
+  border: 0;
+  align-self: flex-end;
+  right: 2%;
+  top: 10%;
+}

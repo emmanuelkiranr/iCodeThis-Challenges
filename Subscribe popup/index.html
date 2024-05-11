@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Subscribe Popup</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="bg"></div>
+      <button class="close">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          width="30"
+          height="20"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M6 18 18 6M6 6l12 12"
+          />
+        </svg>
+      </button>
+      <div class="header">
+        <img
+          width="30"
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAHtUlEQVR4nO2ZeVCW1xXGT1VUgohLUNHgrlMTp1Pr2EzT6TQzWca22RARBIw1iVVxSdo6oVaT2qY1ahorMdamVRMtgguIgKAIRBaDkoBLkIlg3UATtbU0CQm2hu/XOe+5ojZ/lo/gDHfmHdD5Pt/z3PMs515FOlbHan+LGPk3kyRXbtfF04L3TJVmpslguZ0WEyWUOQI/E5gtECsQIWFyuyyipYIFAksFlggkWCfkdlnEio+FAisFXhH4pcAsgUmSLO198bgM9bi/WGC1wHqB5QI/F4gTn7T3RYxcZb6jzzqBLQJ/EfiVwEyB6dJL2usiQn7k7f7zbtc3CmzrbCB+L/CcJ+aSls9HyiPSXhbjJcDj/rNu95MENgtsD4DUTrDBaWGafNHynXhp9h6Rr321xX9fuhAtzZ51Lnbi/ZPA1s6Q3h22BUCyo9G0GzpghviYeyuoti9+vnQjRpo9fv9C4HcCa9zup3WFXT0grTukCPxW4Bmh5bszxccigXkCUfLPr4Y2mrTPCJ5tviTwmuN+SifIuAOye0JGEGztAisE7VLL9+c5UEudzUZIYtsCmCLXvBcvdEWobb6p1BHY0RWyQiCnF2T2gO1d4VXBc6gICWOSpHjWutrpRfUx/QY4/xcfIYeZ4caF68Xrzqeq83SBjEDI7QN77oTsEEjvBn9wn1exP+00sc7R7WUHLlKy/F98vIzkSWeLWsQqMZfRnVfBqnB19/eGQl4/yO1rdPqjwAsu1Ba5lN6koDuZ6FVDT7ZB2DFFmrwhLVGM15q2Kc4ytfiMYNjdFwoGQH5/68KuIKOX5sEy9/MNBR1gHdvsOqlm8JAE+a/4eAkiTuCn7oWvu7TVItIDIUuL7wN7+8Hbg6BwoHUhs6fR66+Oapsc6PTuppctzn51CIyUl/wH4AnZ6LlOonvhmy5t1Sp1l7N7GXUKwqB4CBSFQ34Y7A6xQjUbtnayn2kBJnAFoTRa5QBMlir/AYiST7zwedH5ve7ijm6QGQS7exld8gfA/nAoHQ6lQ+HtuyCnj3Voh9txLXpXsNnszjsM0Gon8ig55U8AzR6A37i01d3XArJc8fv6G3VKhkPZaCgdAUVDYE+o0Sujh4VbVk/IvdNA69+ldrEOKDWjpM5/AOLE57V5mXOe636vTpM3AAoGQfFQKBsJ5ePg4CgoHWbAtAtasNIsp/cNh8oMhtTOlhPqbJMlzX8AporPa/PLTojK/d29YV8/E6zy/p2R8N634MgD8N44+7MCyws1cee5TqlO9oQalVKco+np7RGZ4D8A0eLzdklfptan/q7U8UQ7GA4Mh/J74NhEqI6Gow/BodGwf7CJWT9XMBAKw00n+/rZqLHZdXWmH9KYyZJ+E4BrXhCtcJaofM5Xywy34g+OgcP3Q3U81CZAdSxU3Gs0Kg63zxUNhpKhpo29CiDQ6Ki2/JQBYIocaz0APxaIllXe7zHyn5YOXAewLwxKRsA7o6Hyu1AdCbXPwpmlUDMPjj1sglaAJcPsOTASShRAKOwINEPQC4DpAjHyoc5YrQdAZxQtOlaaW0Js5XUAwZa4B0ZB5b1Q9RjUzIGzv4b6tXD6RaiOg/JvGoiyUXBwNJSPMYvd09dCcK07SyS44TCxNQEkuPYucsUvcqNAsuuA2qYWdHQi1DwFZ16A82/ApRSoT4ITP4Ej9xuVKsYbxSq/bYLP6W0Wuta9Y6nr7vOtCWC6+LzBK8m5jz76Qh0N1AILB0HFONvpM4vhfBJcTocrhXA5Gf62EKpjoOpxOB4D1dOg8j4TcWawhdh6F4yvuxkpoRWHOmKkwTt4vOW8X5/NLsS0AHWVwxOgdhbUrYCLW+BfRfDpUbiSa1qoXQA18+H0EqiZZZ0oDLNM0FFbN0PnIT346L8dJTWtByBO7vZo402cXY2zGmA7u0NOCOQPhIoJcHI+XFgPV/Kh8QNoOgsfH4L6NXBuOVxYY7+fmA0H77ZsyNVJNdhmIh34NFe0EyKdWg2AB2KW+Lwp0hsbQmw4y+5tItRZp/wb5jwXk+GTI9B0Dq7WQ+P7cGkrXNwO/8iG82uheiqUjTE7zQ+zLMjrbwcg3ZgFfjgTEC1ZnsD0Bd7AFmZDmwaS+vm7Y6EmAS5ug89OWvH6fF4LDSXQWAkfl0Ldq6YHFbQmdOkIKB7u9NDTTmiR8oNWB+CBmC0+T2Dagf1DbNrUIsq/DkcfgJq5cDkVms7cAKCdaDoNV89BQzGcfQVqZsPxCDjyIBz+Hhy6xw4+StHZfrwEJl7u8y6u1P81QZUGVU/AiZlwciHULYO/Z9wK4GYgDQXw4QaoWwmnVNhz4f2JUDQMtgdakPn7kosoSfPOteoURXfZrHMqET7aYBT5/CQ01X0ZwNU6aKyChv1wOQ3qVsEHM6BsLOwMMv+PlfF+Lf4mELu8+08VtWZA1aOWvFcKzHm+VPxNID49Bh+9BSfmQPlYczW9GIiVB9uk+BYQsTJew8a7xE0Phnc1B56DS1ugsdY4/7/Ff3YcLrwG1ZNh3yD4s5fsPr2abNPibwEyVQrV9rykVlqpmxx/GE4tgfp1ZqvnkizIKr9jh5qN7kgaJ5ukvSymyA+ZIde8HVU+6/FQ74HUtTSYlrf8H8EX7epavWN1rI7VseT/Xf8FZJqZGyGZ0kQAAAAASUVORK5CYII="
+        />
+        <h2 class="title">
+          Don't miss
+          <br />
+          our hottest news!
+        </h2>
+      </div>
+      <p class="details">
+        Enter your email to receive daily round-up of most <br />
+        hottest news
+      </p>
+      <form class="form">
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Your email goes here"
+        />
+        <button class="btn">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>
