@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Card</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="scripts.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="bg"></div>
+      <div class="top-section">
+        <div class="header">
+          <h3 class="title">Taciti eros morbi sapien sit nec ac</h3>
+          <span class="timestamp">Created on 11.02.2016</span>
+        </div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          width="30"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+          />
+        </svg>
+      </div>
+      <p class="description">
+        Vitae nisl velit donec egestas mi, dolar cras dolar nec
+        <br />
+        sodales quis at, lacinia non egestas lectus praesent quam
+        <br />
+        at, magnis posuere libero.
+      </p>
+      <div class="tasks">
+        <label for="task">
+          <p class="label">Tasks</p>
+          <input
+            type="range"
+            name="range"
+            id="range"
+            value="43"
+            min="0"
+            max="100"
+          />
+          <p class="value"><span class="percentage">43</span>%</p>
+        </label>
+      </div>
+      <div class="profiles">
+        <div class="user"></div>
+        <div class="user"></div>
+        <div class="user"></div>
+        <div class="user"></div>
+      </div>
+    </div>
+  </body>
+</html>

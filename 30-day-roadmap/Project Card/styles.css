@@ -1,0 +1,156 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Poppins", sans-serif;
+  background-color: #1c2258;
+  height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+.container {
+  background-color: #1c2258;
+  border-radius: 6px;
+  box-shadow: 0 4px 40px 0 black;
+  width: min(100% - 3rem, 450px);
+  padding: 20px;
+  color: #c7c7c7;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+}
+
+.bg {
+  width: 98%;
+  height: 50px;
+  z-index: -1;
+  position: absolute;
+  top: -2%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 6px;
+  background-color: #f20894;
+}
+
+.top-section {
+  display: flex;
+  justify-content: space-between;
+}
+
+.top-section svg {
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.title {
+  color: white;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.timestamp {
+  font-size: 12px;
+}
+
+.description {
+  font-size: small;
+}
+
+.tasks label {
+  margin-top: 15px;
+  color: white;
+  font-size: small;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+label input {
+  flex-grow: 1;
+  cursor: pointer;
+  /* pointer-events: none; */
+}
+
+label .value {
+  flex-basis: 50px;
+}
+
+input[type="range"] {
+  appearance: none;
+  background-color: transparent;
+  width: 100%;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  background-color: #111546;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 10px;
+  height: 10px;
+  background-color: #1de0cd;
+  box-shadow: -410px 0 0 405px #1de0cd;
+  border-radius: 50%;
+}
+
+.profiles {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.user {
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #4a5ae8;
+  box-shadow: inset 0 0 0 3px #1c2258;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-image: url("https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+}
