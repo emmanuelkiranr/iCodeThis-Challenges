@@ -141,15 +141,14 @@ h6 {
   place-items: center;
 }
 
-.five {
+.chair:nth-child(5),
+.chair:nth-child(13),
+.chair:nth-child(21),
+.chair:nth-child(29),
+.chair:nth-child(37),
+.chair:nth-child(45),
+.chair:nth-child(53) {
   grid-column-start: 6;
-}
-
-.five,
-.six,
-.seven,
-.eight {
-  place-self: center;
 }
 
 .seat > div {
