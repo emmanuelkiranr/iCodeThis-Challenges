@@ -1,6 +1,7 @@
 const seatContainer = document.querySelector(".seat");
 const Seattemplate = document.querySelector("#template");
 const bookbtn = document.querySelector("#book-btn");
+const count = document.querySelector(".count");
 
 let seatData = [];
 
@@ -27,7 +28,6 @@ seatContainer.addEventListener("click", (e) => {
     const selectedSeatStatus = seatData.find(
       (seat) => seat.id === parseInt(selectedSeat.id)
     );
-    selectedSeatStatus.isSelected = true;
     const svg = selectedSeat.querySelector("svg");
     if (!selectedSeatStatus.isBooked) {
       const fill = svg.getAttribute("fill");
@@ -36,6 +36,8 @@ seatContainer.addEventListener("click", (e) => {
       } else {
         svg.setAttribute("fill", "#5b889f");
       }
+      selectedSeatStatus.isSelected = !selectedSeatStatus.isSelected;
+      count.innerText = seatData.filter((item) => item.isSelected).length;
     }
   }
 });
@@ -47,6 +49,7 @@ bookbtn.addEventListener("click", () => {
       item.isBooked = true;
       item.isSelected = false;
     });
+  count.innerText = 0;
   saveAndRender();
 });
 
