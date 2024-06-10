@@ -1,9 +1,11 @@
 const seatContainer = document.querySelector(".seat");
 const Seattemplate = document.querySelector("#template");
+const bookbtn = document.querySelector("#book-btn");
 
 let seatData = [];
 
 function render() {
+  clearElements(seatContainer);
   getSeatsFromStorage();
   seatData?.forEach((seat) => {
     const content = Seattemplate.content.cloneNode(true);
@@ -25,6 +27,7 @@ seatContainer.addEventListener("click", (e) => {
     const selectedSeatStatus = seatData.find(
       (seat) => seat.id === parseInt(selectedSeat.id)
     );
+    selectedSeatStatus.isSelected = true;
     const svg = selectedSeat.querySelector("svg");
     if (!selectedSeatStatus.isBooked) {
       const fill = svg.getAttribute("fill");
@@ -37,10 +40,20 @@ seatContainer.addEventListener("click", (e) => {
   }
 });
 
+bookbtn.addEventListener("click", () => {
+  seatData
+    .filter((item) => item.isSelected)
+    .forEach((item) => {
+      item.isBooked = true;
+      item.isSelected = false;
+    });
+  saveAndRender();
+});
+
 function createSeats() {
   let arr = [];
   for (let i = 1; i <= 56; i++) {
-    arr.push({ id: i, isBooked: false });
+    arr.push({ id: i, isBooked: false, isSelected: false });
   }
   return arr;
 }
@@ -49,7 +62,6 @@ function getSeatsFromStorage() {
   const seats = localStorage.getItem("seats");
   if (seats) {
     seatData = JSON.parse(seats);
-
     return;
   } else if (seatData.length === 0) {
     createAndsaveSeats();
@@ -60,6 +72,17 @@ function createAndsaveSeats() {
   const seats = createSeats();
   localStorage.setItem("seats", JSON.stringify(seats));
   getSeatsFromStorage();
+}
+
+function clearElements(container) {
+  while (container.firstElementChild) {
+    container.removeChild(container.firstElementChild);
+  }
+}
+
+function saveAndRender() {
+  localStorage.setItem("seats", JSON.stringify(seatData));
+  render();
 }
 
 render();
