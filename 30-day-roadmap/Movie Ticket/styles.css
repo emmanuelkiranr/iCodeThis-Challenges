@@ -207,3 +207,7 @@ button {
   border-radius: 10px;
   border: 0;
 }
+
+button:hover {
+  background-color: #dddfe0;
+}

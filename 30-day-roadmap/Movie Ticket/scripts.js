@@ -3,6 +3,7 @@ const Seattemplate = document.querySelector("#template");
 const bookbtn = document.querySelector("#book-btn");
 const count = document.querySelector(".count");
 const total = document.querySelector(".total");
+const date = document.querySelector(".date");
 
 let seatData = [];
 
@@ -21,6 +22,7 @@ function render() {
     }
     seatContainer.appendChild(content);
   });
+  date.innerText = `${getDate()}, 19 : 50`;
 }
 
 seatContainer.addEventListener("click", (e) => {
@@ -89,6 +91,32 @@ function clearElements(container) {
 function saveAndRender() {
   localStorage.setItem("seats", JSON.stringify(seatData));
   render();
+}
+
+function getDate() {
+  let currentDate = new Date();
+  let fiveDaysFromNow = new Date(
+    currentDate.getTime() + 5 * 24 * 60 * 60 * 1000
+  );
+
+  let monthNames = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+  let month = monthNames[fiveDaysFromNow.getMonth()];
+  let day = fiveDaysFromNow.getDate();
+  let formattedDate = month + " " + day;
+  return formattedDate;
 }
 
 render();
