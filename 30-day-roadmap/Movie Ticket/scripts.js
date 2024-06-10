@@ -2,6 +2,7 @@ const seatContainer = document.querySelector(".seat");
 const Seattemplate = document.querySelector("#template");
 const bookbtn = document.querySelector("#book-btn");
 const count = document.querySelector(".count");
+const total = document.querySelector(".total");
 
 let seatData = [];
 
@@ -38,6 +39,7 @@ seatContainer.addEventListener("click", (e) => {
       }
       selectedSeatStatus.isSelected = !selectedSeatStatus.isSelected;
       count.innerText = seatData.filter((item) => item.isSelected).length;
+      total.innerText = parseInt(count.innerText) * 10;
     }
   }
 });
@@ -50,6 +52,7 @@ bookbtn.addEventListener("click", () => {
       item.isSelected = false;
     });
   count.innerText = 0;
+  total.innerText = 0;
   saveAndRender();
 });
 
