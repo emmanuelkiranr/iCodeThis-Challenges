@@ -1,5 +1,5 @@
 const seatContainer = document.querySelector(".seat");
-const Seattemplate = document.querySelector("#template");
+const seatTemplate = document.querySelector("#template");
 const bookbtn = document.querySelector("#book-btn");
 const count = document.querySelector(".count");
 const total = document.querySelector(".total");
@@ -11,7 +11,7 @@ function render() {
   clearElements(seatContainer);
   getSeatsFromStorage();
   seatData?.forEach((seat) => {
-    const content = Seattemplate.content.cloneNode(true);
+    const content = seatTemplate.content.cloneNode(true);
     const svg = content.querySelector("svg");
     const div = content.querySelector("div");
     div.id = seat.id;
