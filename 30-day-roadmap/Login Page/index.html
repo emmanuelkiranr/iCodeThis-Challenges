@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="login-page">
+      <div class="login-section">
+        <h2 class="heading">Log In</h2>
+        <p class="description">
+          Log in to your account to upload or download <br />
+          pictures, videos or music.
+        </p>
+        <form>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Enter your email address"
+          />
+          <div class="form-btns">
+            <button class="btn btn-primary">
+              Next
+              <svg
+                width="14"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+                />
+              </svg>
+            </button>
+            <button class="btn btn-secondary">Forgot password?</button>
+          </div>
+        </form>
+        <div class="separator"></div>
+        <div class="socials">
+          <button class="box fb">
+            <img
+              width="22"
+              src="data:image/png;base64,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"
+            />
+            Facebook
+          </button>
+          <button class="box google">
+            <img
+              width="22"
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEy0lEQVR4nO2ZbUwbZQDHL45M5vygycRkL0YFlWw9oHdFYSsr69uItBksIYwOwiC8KKwq4EAY8TYYsoG8CIOFCduCzmiTQbveNSC4q7p9chlkEo0fTIxrC2uPFzcXoC885sggdYP2bj1ajP0n/y9N7+nvd9fnuadXCAommGB8DsBEIdMVaB5VjBDWTPTOuFIwNy4TuCx7Y4FFGAss+wQLEwp09q4KNdsK+QNUKT8XYFAIFOj8VQ7HUQXIDUsS6jTHxwI2tcgFTlsecmO6KjrG/+DVgjeoPPS2JUHACnpFEWEssB1BRmeOo+F+gZ/6EGk2SwQLvoI/JiIWuGY+QE6vGThoittky0F+4Rrc/EhtOcgIwNI2cgo/0wk/b1UhE2sNb37YaTW/lTN4cFEUak1Hrf6CpwoQEuIyVD7ys9/g8zmGny5B2lhNRDnqpPKRm1Ml/OqpkzGiexi65X5ZVJjtGCyhSmMwKhcZpZfPVc68kVP4mVo03CITuJiCT5UgXUwmnxlDn7Ed5V9yF6G4hqczqUZ+YgJvPYyY7tfxXmQ7Pr3uWzOQ8TWBB9/v2jE/DM9PlfGBebfHJe8W0EAboPUWBwmfdhhhQPfvc9FgXPL4HdeaiZrWJTzQpG2wG3mmJQG6c7ooYFWhbt95gZMqid4GrcfYjbx4d/jlXoPBvbqYxb3LpBrphtZr7Ea4akWBh31wIXoCqJOehtZr7CR8xZOAwwi3sRnvhXwj4KrJVT1/eP1Ah5E35lGAjEoKlMBbpd/Mev1AOwlPehKYJXdGBErgtWLCxURg3pMAIHc+GyiBbYXD4H8hMOlJYO6HqNcDJRBRRCz8xyexhtEk7vOyjLYHSuDt4z0mBgK8ytXg717jg1pc9qBJk7YJ4jiNvWWbee/pnJ4E3q1v0DMQgONWgh8ZfhNk6RRA0Z8CWgziC1wLqM/Ud3u7AjXtFSqvAwEAPWU38u4sgduNMOgfEIIU7YFFeLqHdQpnx0DCDq7g61sqXo4s1rs8wUcexZ0YiTF7mucwwvU0/AwZDWpw+TK4eyuuyi0kKfL58SBGYiHJlT0Wb2c/p7b1OuNBAQlv/21YYM/TJa8Iv9QTuGzUFwmMxELSsY4xb/BbC78DNZ99hLIavA6XjnqCX74Serml+9vdW9nCdw3teSm/sfZ3JqtP2sedY2zHh3SDCa9kahUuJhKZOoWzjUjswS5mh3obt3dQtrkFl3yu0ipcqX2p4OCpVo/w4UWGBexTjNXNczkdhLhZyUDAXaROLx05axBjXxEJ4iuD8WGXSdGWHsMeYbshseYELr9Jv8f9GGVfKshqxkBYAbmiQMGpxk7Il9QTkhGmAr40u+t9sP2doX/Bp1Sf/xXyNRpN2sZjuv3jfpHozQWRav0i/L7yL6gi7CyrjeOqIUnRc5V6ucUfEoe+VoGMmlYT1omFcQLvJhF6EpfdZjMnnqS1hHTEYFjD39xdhr0Nh7RKRqsTm2Zola5zRGID5I/06kQRdbj01kG37cWTNrX/wOJZvzwkfBXydy4NCtEzuPTHHG2yg/WE1Skcn+DS61/iMv//yfdoNADacB4XH2nCxfpKXPZngTZ5NkurcNFXiN4EpmuVC/Rr5Vf3mxoICdFlSMymj4GCCSYYyNf8A50RcaYC8geEAAAAAElFTkSuQmCC"
+            />
+            Google
+          </button>
+        </div>
+
+        <p class="signup-route">
+          Don't have an account yet? <a href="#">Sign up</a>
+        </p>
+      </div>
+      <div class="bg-section">
+        <img
+          src="https://images.pexels.com/photos/2860705/pexels-photo-2860705.jpeg?auto=compress&cs=tinysrgb&w=800"
+          alt=""
+        />
+      </div>
+    </div>
+  </body>
+</html>
