@@ -1,0 +1,129 @@
+/* Write your CSS code here */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Poppins", sans-serif;
+  background-color: #d7dbe0;
+  height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+ul,
+li {
+  list-style: none;
+  padding: 0;
+}
+
+.container {
+  min-width: min(100% - 3rem, 700px);
+  background-color: #eef1f2;
+  padding: 40px;
+  border-radius: 20px;
+}
+
+h1 {
+  font-size: 22px;
+}
+
+.pills {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.pills > li {
+  cursor: pointer;
+  font-size: x-small;
+  padding: 5px 8px;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.collections {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 25px;
+}
+
+.box {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+.thumbnail {
+  width: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.related {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.related > img {
+  width: 68px;
+  aspect-ratio: 1.2;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.title {
+  font-size: 14px;
+}
+
+.count {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+}
